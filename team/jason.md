@@ -1,0 +1,3 @@
+Hello, my name is Jason, and I'm a 4th year CS student. I have some experience working in the Scrum methodology from taking CS156 as well as CS184. I've worked on some small Unity projects in the past from other classes. I worked on a 2D game for language learning and a VR card game.
+
+It would probably be easiest to make a game in 2D. The mechanic of rewinding time to undo certain actions doesn't seem too bad to implement. From the initial description, it sounds like there should be enemies to defeat, so maybe it could be a puzzle + some action parts where the user can alternate between solving puzzles and defeating enemies. 
