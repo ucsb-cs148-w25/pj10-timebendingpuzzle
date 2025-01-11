@@ -1,5 +1,10 @@
 # Puzzle-Based Time Travel Game Concept
 
+## **About Me**
+- **Sanil Katula:**
+  - A Computer Science student with previous experience in Unity development.
+  - Created an archery game for VR, showcasing skills in immersive gameplay and interactive mechanics.
+
 ## **Theme and Setting**
 - **A Futuristic Lab or Mystical World:**
   - The environment could feature a mix of clean, futuristic elements (e.g., glowing panels, holographic displays) or a mystical look (e.g., ancient ruins with magical glyphs).
