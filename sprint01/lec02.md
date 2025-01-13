@@ -36,3 +36,4 @@
   - Set up next meeting time
   - Set up development environments
   - Complete homework 1, as well as hello world lab
+  - Explore some more game ideas before next meeting
