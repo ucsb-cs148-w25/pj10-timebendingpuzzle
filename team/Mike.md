@@ -5,3 +5,4 @@ Locking gates that can be opened/closed only from one area, but can use time man
 
 Same idea to applied to other objects (platforms, destructibles, etc.)
 
+ 
