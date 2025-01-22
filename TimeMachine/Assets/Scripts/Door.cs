@@ -10,14 +10,14 @@ public class Door : MonoBehaviour
         closedDoor.SetActive(false);
     }
 
-    private void openDoor(){
+    public void openDoor(){
         closedDoor.SetActive(true);
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Key")){
-            openDoor();
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     if(other.gameObject.CompareTag("Key")){
+    //         openDoor();
+    //     }
+    // }
 }

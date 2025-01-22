@@ -32,5 +32,9 @@ public class Key : MonoBehaviour
             isPickUp = true;
             playerRenderer = other.gameObject.GetComponent<SpriteRenderer>();
         }
+        if(other.CompareTag("Door")){
+            other.gameObject.GetComponent<Door>().openDoor();
+            Destroy(gameObject);
+        }
     }
 }
