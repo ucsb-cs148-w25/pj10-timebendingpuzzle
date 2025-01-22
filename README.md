@@ -11,15 +11,15 @@ In **Time Bending Puzzle**, players are challenged to navigate intricate puzzles
 ---
 ## 👥 Creators
 
-| Name              | GitHub           |
-|-------------------|------------------|
-| Sanil Katula          | [sanilkatula](https://github.com/sanilkatula) |
-| Jason Vu          | [Firoc](https://github.com/Firoc) |
-| Mike Petrus       | [Mike-Petrus](https://github.com/Mike-Petrus) |
-| Tom Shangguan     | [TomShangguan](https://github.com/TomShangguan) |
-| Rui Tong          | [Torry051](https://github.com/Torry051) |
-| Montgomery Forde  | [Asuasuasu1](https://github.com/Asuasuasu1) |
-| Sam Bian          | [TantaiYanhen](https://github.com/TantaiYanhen) |
-| Mukun Zhou        | [MukunZhou](https://github.com/MukunZhou) |
+| Name              | GitHub           | Role |
+|-------------------|------------------| ----------------- |
+| Sanil Katula          | [sanilkatula](https://github.com/sanilkatula) | Scene 2 |
+| Jason Vu          | [Firoc](https://github.com/Firoc) | Scene 2 |
+| Mike Petrus       | [Mike-Petrus](https://github.com/Mike-Petrus) | Time Mechanics |
+| Tom Shangguan     | [TomShangguan](https://github.com/TomShangguan) | Player Movement |
+| Rui Tong          | [Torry051](https://github.com/Torry051) | Player Movement |
+| Montgomery Forde  | [Asuasuasu1](https://github.com/Asuasuasu1) | Time Mechanics |
+| Sam Bian          | [TantaiYanhen](https://github.com/TantaiYanhen) | Scene 1 |
+| Mukun Zhou        | [MukunZhou](https://github.com/MukunZhou) | Scene 1 |
 
 ---
