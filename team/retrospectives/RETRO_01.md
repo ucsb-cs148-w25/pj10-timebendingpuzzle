@@ -1,6 +1,6 @@
 # Date of Retrospective: 01/24/25
 
-* Led by: 
+* Led by: Mukun
 * Present: Sanil Katula, Jason Vu, Mike Petrus, Tom Shangguan, Rui Tong, Montgomery Forde, Sam Bian, Mukun Zhou
 * Absent: None
 
