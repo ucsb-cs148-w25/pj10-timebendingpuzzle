@@ -12,6 +12,19 @@
 1. Track the frequency and effectiveness of communication using regular check-ins and feedback sessions.
 2. Peer reviews by measuring improvements in task completion and quality.
 
+# Start/Stop/Continue
+* Start:
+1. Communicating
+2. Clear about tasks
+3. Write stuff down and talk about where they are
+4. Start being a team
+
+* Stop:
+1. Stop hesitating
+
+* Continue:
+1. Two people teams
+
 ## Optional
 
 * Record anything else you think the team might want to remember from this retro
