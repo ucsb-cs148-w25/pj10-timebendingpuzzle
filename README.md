@@ -13,7 +13,6 @@ In **Time Bending Puzzle**, players are challenged to navigate intricate puzzles
 
 | Name              | GitHub           | Role |
 |-------------------|------------------| ----------------- |
-
 | Tom Shangguan     | [TomShangguan](https://github.com/TomShangguan) | Player Movement |
 | Rui Tong          | [Torry051](https://github.com/Torry051) | Player Movement |
 | Mike Petrus       | [Mike-Petrus](https://github.com/Mike-Petrus) | Time Mechanics |
