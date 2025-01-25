@@ -39,3 +39,8 @@ Everything went well and smoothly, and everyone reflected on what could be done 
 * What advice would you give to the next person leading a retro
   based on what you learned today? 
 Leading a retro requires the leader to listen carefully, because no one's opinion shall be ignored. 
+
+
+## Experiment Outcome
+
+* The sub-division between teams of two per team working on a part of the game, resulted in us in being discrete and we werent able to communicate what we were doing to the other teams. So we are gonna fix that by start communicating and giving regularly updates to all the other teams.
