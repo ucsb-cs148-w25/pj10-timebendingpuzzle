@@ -1,6 +1,6 @@
 # Lab02 Meeting Notes - 01/17/2025
 
-## Type of Meeting: Daily Scrum
+## Type of Meeting: Daily Scrum + Sprint Planning
 
 ## Attendance
 
@@ -41,4 +41,8 @@ We discussed the problem scenario and user journey of our project and listed it 
 ## Next Steps
 
 - **Action Items**:
-  - Everyone creates a demo with a sample level by next Wednesday
+- In our Sprint Planning meeting today, we divided up the roles and had people pair up on what tasks to work on.
+- Mike and Monty are working on the time mechanics
+- Tom and Rui are working on player movement
+- Sam and Mukun (Harvey) are working on a scene
+- Sanil and Jason are working on a scene
