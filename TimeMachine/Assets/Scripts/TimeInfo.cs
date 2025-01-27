@@ -43,6 +43,10 @@ public class TimeInfo
         return this.FlipSprite;
     }
 
+    public Quaternion GetRotation(){
+        return Rotation;
+    }
+
     public void setAnim(int state){
         AnimState = state;
     }

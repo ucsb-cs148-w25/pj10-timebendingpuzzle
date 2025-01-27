@@ -58,6 +58,7 @@ public class ObjectTimeController : MonoBehaviour
                 anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
             }
             sprite.flipX = rewindFrames.Last.Value.GetSpriteFlip();
+            transform.rotation = rewindFrames.Last.Value.GetRotation();
             rewindFrames.RemoveLast();
         } else{
             rb.isKinematic = false;
