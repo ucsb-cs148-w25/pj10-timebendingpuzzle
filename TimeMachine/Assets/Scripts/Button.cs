@@ -7,27 +7,27 @@ public class Button : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Level_1");
     }
 
     public void levels()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void back()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void level1()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Level_1");
     }
 
     public void level2()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Level_2");
     }
 
     public void quit()
