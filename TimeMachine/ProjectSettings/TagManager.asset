@@ -7,6 +7,9 @@ TagManager:
   - Key
   - Door
   - MovingPlatform
+  - RotatingDoorButton
+  - Platform
+  - Ground
   layers:
   - Default
   - TransparentFX
