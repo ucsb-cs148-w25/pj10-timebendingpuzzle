@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeController : MonoBehaviour
 {
@@ -11,10 +12,16 @@ public class TimeController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
+
+    public Image playerRevArrow;
+    private RectTransform playerRectTransform;
+    public float revArrowRot = 10f;
+
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        playerRectTransform = playerRevArrow.GetComponent<RectTransform>();
     }
 
     void Update(){
@@ -22,6 +29,10 @@ public class TimeController : MonoBehaviour
             rewinding = true; // TODO: implement event manager to tell other things to stop moving/doing their thing while we are rewinding
         } else{
             rewinding = false;
+        }
+
+        if(rewinding){
+            playerRectTransform.Rotate(0, 0, revArrowRot);
         }
     }
 
