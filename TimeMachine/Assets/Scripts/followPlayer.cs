@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class followPlayer : MonoBehaviour
 {
     public Transform target;  // Assign your player character here
     public float fixedYPosition = 0f; 

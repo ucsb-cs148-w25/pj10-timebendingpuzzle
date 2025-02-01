@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Button : MonoBehaviour
+public class MainMenuButton : MonoBehaviour
 {
     public void startGame()
     {
@@ -14,6 +14,12 @@ public class Button : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelection");
     }
+
+    public void manual()
+    {
+        SceneManager.LoadScene("Instruction");
+    }
+
 
     public void back()
     {
