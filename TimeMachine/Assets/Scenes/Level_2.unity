@@ -734,7 +734,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.69, y: 0.92457694}
   m_EdgeRadius: 0
---- !u!212 &253210920
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1035,12 +1034,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.19}
   m_EdgeRadius: 0
---- !u!50 &297716648
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297716643}
   m_BodyType: 2
@@ -1107,8 +1100,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.16}
   m_EdgeRadius: 0
---- !u!1 &300912447
-GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5990,7 +5981,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1674531544}
-  - {fileID: 5022719762011172308}
   - {fileID: 1945262356}
   - {fileID: 1914904607}
   - {fileID: 1424479536}
