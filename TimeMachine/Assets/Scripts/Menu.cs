@@ -5,6 +5,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject manual;
     private void Awake() {
         menu.SetActive(false);
     }
@@ -12,7 +13,7 @@ public class Menu : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            if(menu.activeSelf){
+            if(menu.activeSelf && !manual.activeSelf){
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
@@ -28,6 +29,9 @@ public class Health : MonoBehaviour
             {
                 live.SetActive(false);
                 currLives--;
+                if(currLives == 0){
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
                 break;
             }
         }
