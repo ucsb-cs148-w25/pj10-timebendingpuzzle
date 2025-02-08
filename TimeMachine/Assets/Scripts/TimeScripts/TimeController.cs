@@ -100,7 +100,8 @@ public class TimeController : MonoBehaviour
         Physics2D.OverlapCollider(playerCollider, filter, colliders);*/
 
         Vector2 size = playerCollider.size;
-        LayerMask layerMask = LayerMask.GetMask("Rewind Collision");
+        //LayerMask layerMask = LayerMask.GetMask("Rewind Collision");
+        LayerMask layerMask = LayerMask.GetMask("Platform");
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
                                 predictedPosition,
                                 size,
