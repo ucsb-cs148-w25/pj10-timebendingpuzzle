@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-
-    private void OnCollisionEnter2D (Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        /* if (collision.collider.GetComponent<Player>()) {
-            
-            collision.collider.GetComponent<Player>().Die();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player hit the spikes!");
 
-            
-        }*/
+            // Attempt to get the Player script and call Die() if it exists
+            SPM player = collision.gameObject.GetComponent<SPM>();
+            if (player != null)
+            {
+                player.Die();
+            }
+        }
     }
-
 }

@@ -6,9 +6,13 @@ public class RotatingDoor : MonoBehaviour
 {
     private float targetRotationZ;
     private bool isRotating = false;
+    private float counter = 0f;
+    private bool isClockwise = false;
+
 
     // Rotation speed
     public float rotationSpeed = 5f;
+
 
     private void Start()
     {
@@ -19,8 +23,25 @@ public class RotatingDoor : MonoBehaviour
     {
         if (!isRotating)
         {
-            targetRotationZ += 90f; // Increment rotation by 90 degrees
+            if (isClockwise == false){
+            counter += 1f;
+            targetRotationZ += 90f; 
             StartCoroutine(RotateToTarget());
+
+            }
+
+            if (isClockwise == true){
+            counter -= 1f;
+            targetRotationZ -= 90f; 
+            StartCoroutine(RotateToTarget());
+            }
+
+            if (counter == 2f){
+                    isClockwise = true;
+                }
+            if (counter == 0f){
+                    isClockwise = false;
+                }
         }
     }
 
@@ -38,4 +59,3 @@ public class RotatingDoor : MonoBehaviour
         isRotating = false;
     }
 }
-

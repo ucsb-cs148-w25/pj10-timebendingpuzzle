@@ -9,6 +9,7 @@ public class SPM : MonoBehaviour
     private BoxCollider2D coll;
     private Animator anim;
     private float dirX = 0f;
+    bool dead = false;
 
     [SerializeField] private LayerMask jumpbleGround;
     [SerializeField] private float moveSpeed = 7f;
@@ -27,15 +28,18 @@ public class SPM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX*moveSpeed,rb.velocity.y);
+        if (!dead)
+        {
+            dirX = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(dirX*moveSpeed,rb.velocity.y);
 
 
-        if (Input.GetButtonDown("Jump") && IsGrounded()){
-            rb.velocity = new Vector2(rb.velocity.x,jumpForce);
+            if (Input.GetButtonDown("Jump") && IsGrounded()){
+                rb.velocity = new Vector2(rb.velocity.x,jumpForce);
+            }
+
+            UpdateAnimationState();
         }
-
-        UpdateAnimationState();
     }
 
     private void UpdateAnimationState(){
@@ -61,5 +65,12 @@ public class SPM : MonoBehaviour
 
     private bool IsGrounded(){
         return Physics2D.BoxCast(coll.bounds.center,coll.bounds.size, 0f, Vector2.down, .1f,jumpbleGround);
+    }
+
+    public void Die() {
+        dead = true;
+        rb.velocity = Vector2.zero; // Stop any movement
+        rb.bodyType = RigidbodyType2D.Static; // Completely disable physics
+        coll.enabled = false; // Disable collider to prevent interactions
     }
 }
