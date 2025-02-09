@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverController : MonoBehaviour
+public class LeverController : MonoBehaviour, IRewindable
 {
     public Transform platform; // Assign the platform GameObject here
     public Vector3 platformUpPosition; // Position where the platform moves up
@@ -12,6 +12,9 @@ public class LeverController : MonoBehaviour
 
     private bool isPlatformUp = true; // Tracks the current state of the platform
     private bool isPlayerInRange = false; // Tracks if the player is near the lever
+
+    //state history
+    private LinkedList<bool> stateHistory = new LinkedList<bool>();
 
     void Start()
     {
@@ -56,6 +59,15 @@ public class LeverController : MonoBehaviour
             Debug.Log("Player left lever range.");
             isPlayerInRange = false; // Reset the flag when the player exits
         }
+    }
+
+    public void SaveState(){
+        stateHistory.AddLast(isPlatformUp);
+    }
+
+    public void RewindState(){
+        isPlatformUp = stateHistory.Last.Value;
+        stateHistory.RemoveLast();
     }
 }
 
