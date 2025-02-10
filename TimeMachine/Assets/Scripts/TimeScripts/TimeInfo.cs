@@ -7,8 +7,9 @@ public class TimeInfo
     //Variables to be recorded at each point in time
     private Vector2 Position;
     private Vector2 Velocity;
-    private Quaternion Rotation;
+    //private Quaternion Rotation;
     // add state and rotation if needed
+    //private bool movementState;
     private int AnimState;
     private bool FlipSprite;
 
@@ -21,11 +22,11 @@ public class TimeInfo
         this.FlipSprite = flipX;
     }
 
-    public TimeInfo(Vector2 pos, Vector2 vel)
+    /*public TimeInfo(Vector2 pos, Vector2 vel)
     {
         this.Position = pos;
         this.Velocity = vel;
-    }
+    }*/
 
     public Vector2 GetPosition(){
         return Position;
@@ -43,9 +44,13 @@ public class TimeInfo
         return this.FlipSprite;
     }
 
-    public Quaternion GetRotation(){
+    /*public Quaternion GetRotation(){
         return Rotation;
     }
+
+    public bool GetMovementState(){
+        return movementState;
+    }*/
 
     public void setAnim(int state){
         AnimState = state;
@@ -55,8 +60,12 @@ public class TimeInfo
         FlipSprite = flip;
     }
 
-    public void setRotation(Quaternion rotation){
+    /*public void setRotation(Quaternion rotation){
         Rotation = rotation;
     }
+
+    public void setMovementState(bool state){
+        movementState = state;
+    }*/
 
 }

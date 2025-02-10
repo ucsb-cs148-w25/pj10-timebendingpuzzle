@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingDoor : MonoBehaviour
+public class RotatingDoor : MonoBehaviour, IRewindable
 {
     private float targetRotationZ;
     private bool isRotating = false;
@@ -12,8 +13,9 @@ public class RotatingDoor : MonoBehaviour
 
     // Rotation speed
     public float rotationSpeed = 5f;
-
-
+    
+    //rewind history
+    private LinkedList<Tuple<bool, float>> rotationHistory = new LinkedList<Tuple<bool, float>>();
     private void Start()
     {
         targetRotationZ = transform.eulerAngles.z; // Initial rotation
@@ -57,5 +59,18 @@ public class RotatingDoor : MonoBehaviour
         }
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, targetRotationZ);
         isRotating = false;
+    }
+
+    public void SaveState(){
+        rotationHistory.AddLast(Tuple.Create(isRotating, targetRotationZ));
+    }
+
+    public void RewindState(){
+        if(rotationHistory.Last.Value.Item1 == false){ // if in  the most recent saved timepoint, the door WASNT rotating
+            targetRotationZ = rotationHistory.Last.Value.Item2;
+        } else if(!isRotating){ // if door isnt currently rotating, but the last saved timepoint door was rotating
+            StartCoroutine(RotateToTarget());
+        }
+        rotationHistory.RemoveLast();
     }
 }
