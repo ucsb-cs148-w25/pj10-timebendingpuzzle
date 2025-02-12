@@ -23,6 +23,7 @@ public class TimeController : MonoBehaviour
     public Image pRevArrow;
     private RectTransform pRevArrowTransform;
     public float pRevArrowRot = 10f;
+    private float pOscSpeed = 10f;
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -40,7 +41,12 @@ public class TimeController : MonoBehaviour
         }
 
         if(rewinding){
+            float colorOsc = (Mathf.Sin(Time.time * pOscSpeed) + 1f) / 2f;
             pRevArrowTransform.Rotate(0, 0, pRevArrowRot);
+            sprite.color = Color.Lerp(Color.blue, Color.white, colorOsc);
+        }
+        else{
+            sprite.color = Color.white;
         }
     }
 
