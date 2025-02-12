@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 using UnityEngine.UIElements;
 
 public class TimeController : MonoBehaviour
@@ -18,12 +19,17 @@ public class TimeController : MonoBehaviour
     //private RewindCollisionCheck rewindCollisionChecker; 
     //private float collisionTime = 0.0f;
     private float collisionPenetrationThreshold = 0.1f;
+
+    public Image pRevArrow;
+    private RectTransform pRevArrowTransform;
+    public float pRevArrowRot = 10f;
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //rewindCollisionChecker = new RewindCollisionCheck();
         playerCollider = GetComponent<BoxCollider2D>();
+        pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
     }
 
     void Update(){
@@ -31,6 +37,10 @@ public class TimeController : MonoBehaviour
             rewinding = true; // TODO: implement event manager to tell other things to stop moving/doing their thing while we are rewinding
         } else{
             rewinding = false;
+        }
+
+        if(rewinding){
+            pRevArrowTransform.Rotate(0, 0, pRevArrowRot);
         }
     }
 
