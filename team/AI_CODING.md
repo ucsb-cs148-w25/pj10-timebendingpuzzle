@@ -34,4 +34,13 @@ suggestions on layout improvements, button placements, and visual hierarchy. The
 and readable, which helped refine the player experience.I also used DALL-E 3 to generate a background picture. 
 
 ---
+## Team Member: Sam Bian
+- AI-Generated UI (Using ChatGPT)
+- Tool Utilized: ChatGPT (GPT-4)
+- Objective: Automate creation of settings menu using Unity’s UI Toolkit.
+- Outcome:
+Generated C# code for a settings menu with sliders/buttons.
+- Reflections on Usefulness:
+  - Pros: Rapid scaffolding of UI structures; helpful for developers familiar with Unity’s UI system.
+  - Cons: Code required manual adjustments for anchoring, scaling, and event handling (e.g., linking sliders to volume controls).
 
