@@ -1,13 +1,19 @@
-# Retrospective , FEb 14 2025
+Retrospective – February 14, 2025
+Led by: Sanil
+Attendees: Sanil Katula, Tom Shangguan, Rui Tong, Sam Bian, Mukun Zhou
+Absent: Jason Vu, Mike Petrus, Montgomery Forde
 
-* Led by: name-goes-here
-* Present: name1, name2, ... , nameN
-* Absent: name1, name2, ...
+Action Items
+Goal:
+The team aims to improve overall efficiency, maintain clear and consistent communication, and ensure that everyone is aligned with the project’s objectives. By keeping all members informed, we can minimize misunderstandings and work more cohesively toward our common goals.
 
-## Action item
+Change:
+To enhance communication and accountability, all team members are required to acknowledge updates in the Slack channel. This includes major project changes, new assignments, or any information that requires individual action. By doing so, we can ensure that everyone is on the same page and that no critical information is overlooked.
 
-* a goal: identify something the team wants to get better at
-* a change: identify one thing that the team will change about how it works together
-* a measurement: identify at least one way to measure whether the change helped the team acheive the goal, or move closer to it.
+Measurement:
+Our progress will be evaluated based on two key factors:
 
-## Optional
+Efficiency: We will assess whether we are completing tasks more quickly and making measurable progress in a shorter time frame.
+Timeliness: We will track whether team assignments are submitted on time and without penalties, ensuring that deadlines are met consistently.
+By implementing these changes, we hope to create a more structured and productive workflow that benefits the entire team.
+
