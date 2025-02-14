@@ -33,9 +33,22 @@ suggestions on layout improvements, button placements, and visual hierarchy. The
 and readable, which helped refine the player experience.I also used DALL-E 3 to generate a background picture. 
 
 
+## Team Member: Sam Bian
+- AI-Generated UI (Using ChatGPT)
+- Tool Utilized: ChatGPT (GPT-4)
+- Objective: Automate creation of settings menu using Unity’s UI Toolkit.
+- Outcome:
+Generated C# code for a settings menu with sliders/buttons.
+- Reflections on Usefulness:
+  - Pros: Rapid scaffolding of UI structures; helpful for developers familiar with Unity’s UI system.
+  - Cons: Code required manual adjustments for anchoring, scaling, and event handling (e.g., linking sliders to volume controls).
+
+
 ## Team Member:  Mike Petrus
 AI used: ChatGPT
 Outcome: I used ChatGPT to help generate code for the visual oscillation on the player character while using the rewind feature. ChatGPT has been very useful for Unity development because, while many of the functions are fairly straightfoward, I have not used Unity prior to this project. This has helped me get more famililar with the specific classes used by Unity and how they are linked to various scripts and the graphical editor. When it came time to write the flashing effect I had the idea to adjust the sprite color in a loop. ChatGPT helped me generate a clever line of code using a sin function so that the color value oscillates between a specified range. It a gave me better insight into the functions that can be used to manipulate sprites and color. Testing was a fairly simple process of first making sure that the sprite color was changing as expected, and then applying the oscillation effect to the loop that controls player rewinding. Going forward I can carry this experience into some of our other sprites and effects. For example, having the player flash red when they take damage or having a different visual effect when objects move through time, rather than the player.
 
----
 
+## Team Member:  Rui Tong
+AI used: ChatGPT
+Outcome: ChatGPT was helpful in identifying common mistakes in Unity and explaining why certain errors occurred. It provided alternative solutions that improved my understanding of Unity’s scripting workflow. I also use AI to help me design UI for our game. While ChatGPT provided useful design suggestions, it lacked deep visualization capabilities. It worked best for conceptual guidance rather than detailed UI layouts.
