@@ -52,3 +52,9 @@ Outcome: I used ChatGPT to help generate code for the visual oscillation on the 
 ## Team Member:  Rui Tong
 AI used: ChatGPT
 Outcome: ChatGPT was helpful in identifying common mistakes in Unity and explaining why certain errors occurred. It provided alternative solutions that improved my understanding of Unity’s scripting workflow. I also use AI to help me design UI for our game. While ChatGPT provided useful design suggestions, it lacked deep visualization capabilities. It worked best for conceptual guidance rather than detailed UI layouts.
+
+## Team Member: Montgomery Forde
+AI used: ChatGPT
+Usage: I used chatgpt to help me learn about C# features, as well as to give possible solutions for problems. For example, I needed to fix an edge case of collision detection, and ChatGPT helped to illuminate the possible issues, and helped provide several different solutions. 
+Outcome: The collision detection for the time-rewind is much better, and accurately stops the player from moving through objects (outside of a few edge cases)
+Reflection: I think that this tool will be very very useful when it comes to providing information about Unity or C# objects and how to use them. For many issues, there are easy solutions using Unity's built-in features. But to use them, I need to have seen them or heard about them before. AI is very good at identifying when a particular thing should be used in a certain context, and can as such can provide information that will save me lots of headache in the future.
