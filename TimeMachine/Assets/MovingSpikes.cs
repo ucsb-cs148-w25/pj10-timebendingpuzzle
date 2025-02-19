@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class MovingSpikes : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 5;
     public bool isMoving = false;
     private Rigidbody2D rb;
+    private Vector3 origin;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        origin = transform.position;
+        // StartMoving();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!isMoving)   return;
+        if(isMoving && origin == transform.position)   isMoving = false;
         
     }
 
     public void StartMoving(){
         isMoving = true;
+        rb.velocity = new Vector2(speed, 0);
+    }
+
+    public void StopMoving(){
+        isMoving = false;
+        rb.velocity = new Vector2(0, 0);
     }
 }
