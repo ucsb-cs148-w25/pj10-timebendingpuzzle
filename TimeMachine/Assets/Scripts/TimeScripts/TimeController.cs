@@ -124,39 +124,5 @@ public class TimeController : MonoBehaviour
         //Debug.Log("NOT COLLIDING");
         return (false, Vector2.zero);
     }
-
-
-    /*public (bool, Vector2, Vector2) rewindCausesCollision(Vector2 predictedPosition){ // returns bool, distance to colliding object, direction of colliding object
-        //BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
-
-        /*List<Collider2D> colliders = new List<Collider2D>();
-        ContactFilter2D filter = new ContactFilter2D();
-        filter.NoFilter();
-        Physics2D.OverlapCollider(playerCollider, filter, colliders);
-
-        Vector2 size = playerCollider.size;
-        //LayerMask layerMask = LayerMask.GetMask("Rewind Collision");
-        LayerMask layerMask = LayerMask.GetMask("Platform");
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(
-                                transform.position,
-                                size,
-                                transform.eulerAngles.z,
-                                layerMask);
-
-        foreach(Collider2D collider in colliders){
-            if(collider == playerCollider) continue;
-
-            ColliderDistance2D distance = playerCollider.Distance(collider); // issue: not using predicted posiition for collider
-            if(distance.isOverlapped && Mathf.Abs(distance.distance) > collisionPenetrationThreshold){
-                Debug.DrawLine(distance.pointA, distance.pointB, Color.green);
-                return (true, distance.pointB, distance.normal);
-            }
-            //if(collider != playerCollider){
-            //    Debug.Log("Causing a collision");
-            //    return true;
-            //}
-        }
-        return (false, Vector2.zero, Vector2.zero);
-    }*/
     
 }
