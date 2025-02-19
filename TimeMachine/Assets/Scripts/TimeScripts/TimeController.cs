@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -35,7 +37,7 @@ public class TimeController : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if(rewinding == true){
+        if(rewinding == true && rewindFrames.Count > 0){
             rb.isKinematic = true; // for some unfathomable fucking reason collisions do not detect properly when physics are on. ???
                                     // probably because its kicking me out of being inside a block, which then gets stored in rewind frames,
                                     // but maybe theres disjunction between the frame thats added and the frame thats actually checked? IDK
@@ -51,59 +53,76 @@ public class TimeController : MonoBehaviour
         //while(rewindFrames.Count * Time.fixedDeltaTime >= rewindTime){ // while in case fixed intervals turn out to be a bad idea, then i can easily swap to normal timeupdates
         //    rewindFrames.RemoveFirst();
         //}
-
-        TimeInfo timeInfo = new TimeInfo(transform.position, rb.velocity, anim.GetInteger("state"), sprite.flipX);
-        rewindFrames.AddLast(timeInfo);
+        if(rewindFrames.Count == 0 || rewindFrames.Last.Value.GetPosition() != (Vector2) transform.position){ // OR allowed since boolean logic ops are short circuiting
+            TimeInfo timeInfo = new TimeInfo(transform.position, rb.velocity, anim.GetInteger("state"), sprite.flipX);
+            rewindFrames.AddLast(timeInfo);
+        }
     }
 
     void RewindStoredSeconds(){
         var collision = rewindCausesCollision(rewindFrames.Last.Value.GetPosition());
-        if(rewindFrames.Count > 0 && !collision.Item1){
-            /*transform.position = rewindFrames.Last.Value.GetPosition();
-            rb.velocity = rewindFrames.Last.Value.GetVelocity();
-            anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
-            sprite.flipX = rewindFrames.Last.Value.GetSpriteFlip();
-            Debug.Log("Removing");
-            Debug.Log(rewindFrames.Last.Value.GetPosition());
-            rewindFrames.RemoveLast();*/
+        if(!collision.Item1){
             rb.MovePosition(rewindFrames.Last.Value.GetPosition());
             rb.velocity = rewindFrames.Last.Value.GetVelocity();
             anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
             sprite.flipX = rewindFrames.Last.Value.GetSpriteFlip();
             rewindFrames.RemoveLast();
         } 
-        else if(collision.Item1){
-            //TimeInfo timeInfo = new TimeInfo(rewindFrames.Last.Value.GetPosition(), rewindFrames.Last.Value.GetVelocity(), rewindFrames.Last.Value.GetAnimState(), rewindFrames.Last.Value.GetSpriteFlip());
-            //rewindFrames.AddLast(timeInfo);
-            //StoreRewindSeconds();
-            //Vector2 dir = (rewindFrames.Last.Value.GetPosition() - (Vector2) transform.position).normalized;
-
-            //transform.position = Vector2.Lerp(transform.position, collision.Item2 - dir * collisionPenetrationThreshold, 0.5f); // collision detected: lerp to nearest safe point
-            
-            if(Vector2.Distance(rewindFrames.Last.Value.GetPosition(), transform.position) > 0.2){
-                Vector2 dir = (rewindFrames.Last.Value.GetPosition() - (Vector2)transform.position).normalized;
-                Vector2 safePos = collision.Item2 - dir * collisionPenetrationThreshold;
-                transform.position = safePos;
-            }
-            rb.velocity = Vector2.zero;
-        } else{
-            rewinding = false;
+        else{
+            Debug.Log("Moving to safe pos");
+            rb.MovePosition(collision.Item2);
+            rb.velocity = rewindFrames.Last.Value.GetVelocity();
+            anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
+            sprite.flipX = rewindFrames.Last.Value.GetSpriteFlip();
         }
     }
 
     public (bool, Vector2) rewindCausesCollision(Vector2 predictedPosition){
+        LayerMask layerMask = LayerMask.GetMask("Platform");
+        float dist = Vector2.Distance(transform.position, predictedPosition);
+        Vector2 dir = (predictedPosition - (Vector2) transform.position).normalized;
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, playerCollider.size, transform.eulerAngles.z, dir, dist, layerMask);
+        if(hits.Length > 0){
+            foreach(RaycastHit2D hit in hits){
+                if(hit.collider == playerCollider) continue;
+
+                // Want to offset out hitpoint by the playercollider amt
+                    // A collider will be colliding in only 1 direction. Cant next in corner, since first collision is counted. 
+                    // Thus, only need to offset in the direction of the normal vector
+                    // Doing it this way causes some maybe unexpected behavior when rewinding on a rotating object
+                    // it sorta pushes you down instead of you being stuck to it, which i feel like is less than ideal but
+                    // honestly its good enough. Possibly causes bad errors in future if it pushes you behind a wall through which you cant rewind?
+                Vector2 newPos = hit.point + (hit.normal * playerCollider.size);
+                    
+                //Debug.DrawLine(hit.point, predictedPosition, Color.green);
+                //Debug.Log("COLLIDING: OVERLAP");
+
+                //Now, we want to check for the case that the colliding object is pushing us further away from the point that we want to rewind to
+                    // We thus need to add more rewind frames
+                if(Vector2.Distance(transform.position, predictedPosition) < Vector2.Distance(newPos, predictedPosition)){ // we are now further away while rewinding
+                    StoreRewindSeconds();
+                }
+                return (true, newPos);
+            }
+        }
+        //Debug.Log("NOT COLLIDING");
+        return (false, Vector2.zero);
+    }
+
+
+    /*public (bool, Vector2, Vector2) rewindCausesCollision(Vector2 predictedPosition){ // returns bool, distance to colliding object, direction of colliding object
         //BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
 
         /*List<Collider2D> colliders = new List<Collider2D>();
         ContactFilter2D filter = new ContactFilter2D();
         filter.NoFilter();
-        Physics2D.OverlapCollider(playerCollider, filter, colliders);*/
+        Physics2D.OverlapCollider(playerCollider, filter, colliders);
 
         Vector2 size = playerCollider.size;
         //LayerMask layerMask = LayerMask.GetMask("Rewind Collision");
         LayerMask layerMask = LayerMask.GetMask("Platform");
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
-                                predictedPosition,
+                                transform.position,
                                 size,
                                 transform.eulerAngles.z,
                                 layerMask);
@@ -111,17 +130,17 @@ public class TimeController : MonoBehaviour
         foreach(Collider2D collider in colliders){
             if(collider == playerCollider) continue;
 
-            ColliderDistance2D distance = playerCollider.Distance(collider);
+            ColliderDistance2D distance = playerCollider.Distance(collider); // issue: not using predicted posiition for collider
             if(distance.isOverlapped && Mathf.Abs(distance.distance) > collisionPenetrationThreshold){
-                Debug.DrawLine(distance.pointA, distance.pointB, Color.red);
-                return (true, distance.pointB);
+                Debug.DrawLine(distance.pointA, distance.pointB, Color.green);
+                return (true, distance.pointB, distance.normal);
             }
             //if(collider != playerCollider){
             //    Debug.Log("Causing a collision");
             //    return true;
             //}
         }
-        return (false, Vector2.zero);
-    }
+        return (false, Vector2.zero, Vector2.zero);
+    }*/
     
 }
