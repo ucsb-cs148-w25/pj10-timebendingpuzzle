@@ -15,7 +15,7 @@ public class TimeController : MonoBehaviour
     BoxCollider2D playerCollider;
     //private RewindCollisionCheck rewindCollisionChecker; 
     //private float collisionTime = 0.0f;
-    private float collisionPenetrationThreshold = 0.1f;
+    //private float collisionPenetrationThreshold = 0.1f;
 
     public Image pRevArrow;
     private RectTransform pRevArrowTransform;
@@ -80,7 +80,7 @@ public class TimeController : MonoBehaviour
             rewindFrames.RemoveLast();
         } 
         else{
-            Debug.Log("Moving to safe pos");
+            //Debug.Log("Moving to safe pos");
             rb.MovePosition(collision.Item2);
             rb.velocity = rewindFrames.Last.Value.GetVelocity();
             anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
