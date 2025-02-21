@@ -1,21 +1,15 @@
 User Feedback Needs
 
-We are looking for user feedback on the following aspects of our product, listed in priority order:
+We’re gathering feedback to improve our game experience. Please share your thoughts on the following aspects, ranked by priority:
 
-Death Mechanics
+Time Reversal Mechanics – Should players be able to reverse time on both objects and themselves?
 
-Should the game restart from the beginning upon death, or should the game end immediately?
+Idle Time & Time Reversal – When a player is idle, should time reversal skip those moments or include them?
 
-We would like to understand player preferences regarding these two options and their impact on game enjoyment and engagement.
+Walking Sound Effects – How do the current sound effects for walking feel? Would you like any changes?
 
-Trap Mechanics
+End Game Experience – What would your ideal ending sequence look like? (E.g., cinematic, interactive, open-ended, etc.)
 
-Should falling into a trap result in instant death, or should it only reduce the player's health?
+Future Levels & Enemies – Would you like to see enemies in later levels? If so, what types?
 
-Feedback on how this affects difficulty balance and player experience would be valuable.
-
-Jumping Mechanics
-
-Should the character have the ability to double jump or be limited to a single jump?
-
-We want to gauge user preference and how this affects gameplay fluidity and challenge.
+User Experience Improvements – What aspects of the UI/UX could be better? Are there any pain points in navigation, controls, or interactions?
