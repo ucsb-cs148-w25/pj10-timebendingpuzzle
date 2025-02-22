@@ -48,96 +48,93 @@ This document outlines our testing strategy for our Unity 2D game project. We ha
 
 ---
 
-## Example Unit Test
+## 1. Installing the Unity Test Framework
+Before writing tests, we installed the **Unity Test Framework (UTF)** using **Package Manager**.
 
-The following example demonstrates how we implemented a unit test for a simple functionality in our game. Assume we have a `RotateDoor` script that handles updating the player's score. 
+### Steps to Install:
+1. Open **Unity**.
+2. Go to **Window > Package Manager**.
+3. Select **Unity Registry** and search for **Unity Test Framework**.
+4. Click **Install**.
 
+✅ After installation, **we were able to run Edit Mode and Play Mode tests** inside the **Test Runner**.
+
+---
+
+## 2. Setting Up a Test Scene
+We created a **separate scene** (`TestScene`) specifically for testing purposes.
+
+### Steps to Create and Use the Test Scene:
+1. Open **Unity** and go to **File > New Scene**.
+2. Save it as **`TestScene.unity`** inside the `Assets/Scenes/` folder.
+3. **Add a Player GameObject** (same as in the main game).
+4. Go to **File > Build Settings** and **add `TestScene` to the build settings**.
+5. Write tests to verify that the **player exists in the scene**.
+
+---
+
+## 3. Unit Testing: Verifying the Player Exists
+The first test we implemented was to **verify that the player exists in the scene**.
+
+### Testing Library Used:
+- **Unity Test Framework (UTF)**
+- **NUnit (Assertions)**
+
+### Test: Checking if Player Exists
 ```csharp
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 
-public class RotatingDoorTests
+public class PlayerExistenceTest
 {
-    private GameObject doorObject;
-    private RotatingDoor rotatingDoor;
+    private GameObject player;
 
     [SetUp]
     public void Setup()
     {
-        // Create a new GameObject and attach the RotatingDoor component.
-        doorObject = new GameObject("TestDoor");
-        rotatingDoor = doorObject.AddComponent<RotatingDoor>();
-        // In PlayMode tests, the Start() method is automatically called on the first frame update.
-    }
-
-    [TearDown]
-    public void Teardown()
-    {
-        // Clean up the GameObject after each test.
-        Object.Destroy(doorObject);
+        // Load the test scene before running the test
+        SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
     }
 
     [UnityTest]
-    public IEnumerator RotateDoor_SingleRotation_Rotates90Degrees()
+    public IEnumerator Player_SpawnsCorrectly()
     {
-        // Wait one frame so that Start() has been executed.
-        yield return null;
+        yield return new WaitForSeconds(1); // Allow scene to load
 
-        float initialAngle = doorObject.transform.eulerAngles.z;
-        
-        // Trigger the door rotation (should rotate 90° in the forward direction).
-        rotatingDoor.RotateDoor();
-        
-        // Calculate the expected angle after one rotation.
-        float expectedAngle = (initialAngle + 90f) % 360f;
-        
-        // Wait until the door has finished rotating (i.e. until its current angle is near the expected angle).
-        yield return new WaitUntil(() =>
-            Mathf.Abs(Mathf.DeltaAngle(doorObject.transform.eulerAngles.z, expectedAngle)) < 0.1f);
-        
-        // Assert that the door's rotation is approximately 90° from the initial rotation.
-        Assert.AreEqual(expectedAngle, doorObject.transform.eulerAngles.z, 0.1f, 
-            "Door did not rotate by 90 degrees as expected.");
-    }
+        // Find the player in the scene
+        player = GameObject.FindWithTag("Player");
 
-    [UnityTest]
-    public IEnumerator RotateDoor_FourRotations_ReturnsToInitialAngle()
-    {
-        // Wait one frame so that Start() has been executed.
-        yield return null;
-        
-        float initialAngle = doorObject.transform.eulerAngles.z;
-
-        // --- First Rotation: should add 90° ---
-        rotatingDoor.RotateDoor();
-        float expectedAngle = (initialAngle + 90f) % 360f;
-        yield return new WaitUntil(() =>
-            Mathf.Abs(Mathf.DeltaAngle(doorObject.transform.eulerAngles.z, expectedAngle)) < 0.1f);
-        Assert.AreEqual(expectedAngle, doorObject.transform.eulerAngles.z, 0.1f);
-
-        // --- Second Rotation: should add another 90° (total 180°) ---
-        rotatingDoor.RotateDoor();
-        expectedAngle = (initialAngle + 180f) % 360f;
-        yield return new WaitUntil(() =>
-            Mathf.Abs(Mathf.DeltaAngle(doorObject.transform.eulerAngles.z, expectedAngle)) < 0.1f);
-        Assert.AreEqual(expectedAngle, doorObject.transform.eulerAngles.z, 0.1f);
-
-        // --- Third Rotation: now the door should rotate in reverse (subtract 90°), back to 90° ---
-        rotatingDoor.RotateDoor();
-        expectedAngle = (initialAngle + 90f) % 360f;
-        yield return new WaitUntil(() =>
-            Mathf.Abs(Mathf.DeltaAngle(doorObject.transform.eulerAngles.z, expectedAngle)) < 0.1f);
-        Assert.AreEqual(expectedAngle, doorObject.transform.eulerAngles.z, 0.1f);
-
-        // --- Fourth Rotation: subtract another 90° to return to the initial rotation ---
-        rotatingDoor.RotateDoor();
-        expectedAngle = initialAngle % 360f;  // same as initialAngle
-        yield return new WaitUntil(() =>
-            Mathf.Abs(Mathf.DeltaAngle(doorObject.transform.eulerAngles.z, expectedAngle)) < 0.1f);
-        Assert.AreEqual(expectedAngle, doorObject.transform.eulerAngles.z, 0.1f, 
-            "After four rotations, the door did not return to its initial angle.");
+        // Check if the player exists
+        Assert.IsNotNull(player, "Player object was not found in the test scene.");
     }
 }
+```
+### Test Result: Success
+
+<img width="416" alt="Screenshot 2025-02-21 at 9 02 27 PM" src="https://github.com/user-attachments/assets/15d71c59-b05d-4b97-81e8-3286e95336ea" />
+
+
+## Plans for future
+
+1. Continue testing critical mechanics like scoring system and UI updates.
+2. Avoid testing physics-heavy interactions that are better suited for integration or E2E tests.
+3. Refactor existing tests to improve efficiency and coverage.
+
+##  Implementing End-to-End Testing 
+### Testing Library Used: 
+1. Unity Test Framework (UTF) (Play Mode Tests)
+### Tested Components:
+1. Player exists
+2. Player movement across the scene
+
+##  Plans for Higher-Level Testing Going Forward
+1. Continue using E2E tests for player-object interactions.
+2. No immediate plan for full BDD tests due to time constraints, but Play Mode tests will be refined.
+3. Exploring CI/CD integration for automated testing workflows.
+
+
+
 
