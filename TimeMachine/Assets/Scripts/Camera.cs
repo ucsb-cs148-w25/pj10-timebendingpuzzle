@@ -5,15 +5,16 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y,transform.position.z);
+        if (player != null)  // ✅ Prevents error when player is missing
+        {
+            transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        }
+        else
+        {
+            Debug.LogWarning("Player reference is missing in Camera.cs. Make sure the player exists in the scene.");
+        }
     }
 }
