@@ -14,6 +14,7 @@ public class Trap : MonoBehaviour
     }
 
     private void Update() {
+        if(!isEnetered) return;
         time += Time.deltaTime;
         Health health = m_player.GetComponent<Health>();
         if (time > 3f && health)
@@ -31,7 +32,7 @@ public class Trap : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Player")
         {
             isEnetered = false;
