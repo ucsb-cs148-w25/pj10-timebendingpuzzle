@@ -57,7 +57,7 @@ public class ObjectTimeController : MonoBehaviour
     private void RewindStoredSeconds(){
         if(rewindFrames.Count > 0){
             transform.position = rewindFrames.Last.Value.GetPosition();
-            if(rb) rb.velocity = rewindFrames.Last.Value.GetVelocity();
+            if(rb && (rb.bodyType != RigidbodyType2D.Static)) rb.velocity = rewindFrames.Last.Value.GetVelocity();
             //if(anim != null){
             //    anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
             //}

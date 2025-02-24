@@ -17,7 +17,7 @@ public class Trap : MonoBehaviour
         if(!isEnetered) return;
         time += Time.deltaTime;
         Health health = m_player.GetComponent<Health>();
-        if (time > 3f && health)
+        if (time > 3f && health && isEnetered)
         {
             time = 0;
             health.Attack();
