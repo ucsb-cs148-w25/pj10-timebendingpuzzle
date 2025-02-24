@@ -2717,7 +2717,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b99e4ca54feb1c499bd45b2c95dfde1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3577,6 +3577,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1396661239 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1784634017516100716, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
+  m_PrefabInstance: {fileID: 1693459303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1452869945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4663,9 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 7
   jumpForce: 7
+  Audio: {fileID: 0}
+  jumpSound: {fileID: 0}
+  moveSound: {fileID: 0}
 --- !u!61 &1640713088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8339,6 +8347,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1784634017516100716, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784634017516100716, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3253918218275743881, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.24
@@ -8379,6 +8395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9145982903769352726, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
+      propertyPath: jumpAudio
+      value: 
+      objectReference: {fileID: 1396661239}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
