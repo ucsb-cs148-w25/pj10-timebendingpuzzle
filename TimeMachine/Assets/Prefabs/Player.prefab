@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9cb5dc28aab404aaf4e3472bcc623f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pRevArrow: {fileID: 0}
+  pRevArrow: {fileID: 397549573758927461}
   pRevArrowRot: 10
 --- !u!82 &1784634017516100716
 AudioSource:
