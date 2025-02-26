@@ -10,6 +10,8 @@ TagManager:
   - RotatingDoorButton
   - Platform
   - Ground
+  - bridge
+  - Bridge
   layers:
   - Default
   - TransparentFX
