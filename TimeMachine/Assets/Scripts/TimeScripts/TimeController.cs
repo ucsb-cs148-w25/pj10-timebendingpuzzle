@@ -27,7 +27,7 @@ public class TimeController : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         //rewindCollisionChecker = new RewindCollisionCheck();
         playerCollider = GetComponent<BoxCollider2D>();
-        pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
+        //pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
     }
 
     void Update(){
@@ -39,7 +39,7 @@ public class TimeController : MonoBehaviour
 
         if(rewinding){
             float colorOsc = (Mathf.Sin(Time.time * pOscSpeed) + 1f) / 2f;
-            pRevArrowTransform.Rotate(0, 0, pRevArrowRot);
+            //pRevArrowTransform.Rotate(0, 0, pRevArrowRot);
             sprite.color = Color.Lerp(Color.blue, Color.white, colorOsc);
         }
         else{

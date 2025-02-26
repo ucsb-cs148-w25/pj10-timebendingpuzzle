@@ -66,7 +66,7 @@ public class ObjectTimeController : MonoBehaviour
             rewindFrames.RemoveLast();
             rewindable?.RewindState(); // custom rewinding per object
         } else{
-            if(rb) rb.isKinematic = false;
+            if(rb && (rb.bodyType != RigidbodyType2D.Static)) rb.isKinematic = false;
             rewinding = false;
         }
     }
