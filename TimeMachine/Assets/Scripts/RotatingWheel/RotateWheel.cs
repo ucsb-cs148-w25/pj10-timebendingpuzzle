@@ -12,7 +12,7 @@ public class RotateWheel : MonoBehaviour, IRewindable
     public float rotationSpeed = 5f;
     
     // Rewind history
-    private LinkedList<Quaternion> rotationHistory = new LinkedList<Quaternion>();
+    private LinkedList<Tuple<bool, Quaternion>> rotationHistory = new LinkedList<Tuple<bool, Quaternion>>();
 
     private void Start()
     {
@@ -44,16 +44,16 @@ public class RotateWheel : MonoBehaviour, IRewindable
 
     public void SaveState()
     {
-        rotationHistory.AddLast(transform.rotation);
+        rotationHistory.AddLast(Tuple.Create(isRotating, targetRotation));
     }
 
     public void RewindState()
     {
-        if (rotationHistory.Count > 0)
-        {
-            transform.rotation = rotationHistory.Last.Value;
-            targetRotation = transform.rotation;
-            rotationHistory.RemoveLast();
+        if(rotationHistory.Last.Value.Item1 == false){ // if in  the most recent saved timepoint, the door WASNT rotating
+            targetRotation = rotationHistory.Last.Value.Item2;
+        } else if(!isRotating){ // if door isnt currently rotating, but the last saved timepoint door was rotating
+            StartCoroutine(RotateToTarget());
         }
+        rotationHistory.RemoveLast();
     }
 }

@@ -51,12 +51,14 @@ public class ObjectTimeInfo
     //    AnimState = state;
     //}
 
-    public void setFlip(bool flip){
-        FlipSprite = flip;
+    public void SetRotation(Quaternion rotation)
+    {
+        this.Rotation = rotation;
     }
 
-    public void setRotation(Quaternion rotation){
-        Rotation = rotation;
+    public void SetFlip(bool flip)
+    {
+        this.FlipSprite = flip;
     }
 
 }
