@@ -6,7 +6,7 @@ public class SPM : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
-    private BoxCollider2D coll;
+    private CapsuleCollider2D coll;
     private Animator anim;
     private float dirX = 0f;
     bool dead = false;
@@ -26,7 +26,7 @@ public class SPM : MonoBehaviour
         Audio = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
