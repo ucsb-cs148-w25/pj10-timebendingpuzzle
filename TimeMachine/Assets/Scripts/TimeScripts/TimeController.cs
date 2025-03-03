@@ -12,7 +12,7 @@ public class TimeController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
-    BoxCollider2D playerCollider;
+    CapsuleCollider2D playerCollider;
     //private RewindCollisionCheck rewindCollisionChecker; 
     //private float collisionTime = 0.0f;
     //private float collisionPenetrationThreshold = 0.1f;
@@ -26,8 +26,13 @@ public class TimeController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //rewindCollisionChecker = new RewindCollisionCheck();
+<<<<<<< HEAD
         playerCollider = GetComponent<BoxCollider2D>();
         //pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
+=======
+        playerCollider = GetComponent<CapsuleCollider2D>();
+        pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
+>>>>>>> 9a62b4bd7734442c8c450bf61804cdb269f0c2f4
     }
 
     void Update(){
