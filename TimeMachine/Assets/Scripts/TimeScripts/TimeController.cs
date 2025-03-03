@@ -26,13 +26,8 @@ public class TimeController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //rewindCollisionChecker = new RewindCollisionCheck();
-<<<<<<< HEAD
-        playerCollider = GetComponent<BoxCollider2D>();
-        //pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
-=======
         playerCollider = GetComponent<CapsuleCollider2D>();
         pRevArrowTransform = pRevArrow.GetComponent<RectTransform>();
->>>>>>> 9a62b4bd7734442c8c450bf61804cdb269f0c2f4
     }
 
     void Update(){
