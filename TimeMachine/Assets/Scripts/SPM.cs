@@ -17,8 +17,10 @@ public class SPM : MonoBehaviour
     public AudioSource Audio;
     public AudioClip jumpSound;
     public AudioClip moveSound;
+    public bool isStop = false;
 
-    private enum MovementState {idle, running, jumping, falling}
+    public enum MovementState {idle, running, jumping, falling}
+    public MovementState state;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,12 @@ public class SPM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isStop)
+        {
+            state = MovementState.idle;
+            anim.SetInteger("state",(int)state);
+            return;
+        }
         if (!dead)
         {
             dirX = Input.GetAxisRaw("Horizontal");
@@ -50,7 +58,6 @@ public class SPM : MonoBehaviour
     }
 
     private void UpdateAnimationState(){
-        MovementState state;
         if(dirX > 0f){
             state = MovementState.running;
             // if(moveAudio.isPlaying == false)
