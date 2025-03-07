@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,14 @@ public class Key : MonoBehaviour
     private SpriteRenderer playerRenderer;
     private SpriteRenderer keyRenderer;
     [SerializeField] private float offset = 0.7f;
+    private Vector3 originalPosition;
     private void Start() {
         keyRenderer = GetComponent<SpriteRenderer>();
+        originalPosition = transform.position;
+        if(CheckpointManager.instance){
+            CheckpointManager.instance.OnRestObject += ResetKey;
+        }
+        
     }
 
     private void Update()
@@ -36,5 +43,15 @@ public class Key : MonoBehaviour
             other.gameObject.GetComponent<Door>().openDoor();
             Destroy(gameObject);
         }
+    }
+
+    private void ResetKey(object sender, EventArgs e){
+        isPickUp = false;
+        transform.position = originalPosition;
+        keyRenderer.flipY = false;
+    }
+
+    private void OnDestroy() {
+        CheckpointManager.instance.OnRestObject -= ResetKey;
     }
 }
