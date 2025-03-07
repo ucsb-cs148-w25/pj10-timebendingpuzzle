@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,7 +24,7 @@ public class Transition : MonoBehaviour
 
         Level_End_Invoke levelEndMenu = levelEndInstance.GetComponent<Level_End_Invoke>();
         if (levelEndMenu != null)
-            levelEndMenu.Initialize(3);
+            levelEndMenu.Initialize(GetComponent<Health>().currLives);
         else
             Debug.LogError("LevelEndMenu script not found on prefab!");
     }
