@@ -11,6 +11,7 @@ TagManager:
   - Platform
   - Ground
   - Weak Point
+  - Patrol Point
   layers:
   - Default
   - TransparentFX
