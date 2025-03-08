@@ -52,4 +52,9 @@ public class MainMenuButton : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void restartGame()
+    {
+        StartCoroutine(WaitSecond("MainMenu"));
+    }
 }
