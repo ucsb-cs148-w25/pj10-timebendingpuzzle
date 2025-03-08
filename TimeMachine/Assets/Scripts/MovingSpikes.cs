@@ -17,11 +17,11 @@ public class MovingSpikes : MonoBehaviour
         // StartMoving();
     }
     private void Start() {
-        CheckpointManager.instance.OnRestObject += ResetSpikes;
+        CheckpointManager.instance.OnResetObject += ResetSpikes;
     }
 
     private void OnDestroy() {
-        CheckpointManager.instance.OnRestObject -= ResetSpikes;
+        CheckpointManager.instance.OnResetObject -= ResetSpikes;
     }
 
     // Update is called once per frame

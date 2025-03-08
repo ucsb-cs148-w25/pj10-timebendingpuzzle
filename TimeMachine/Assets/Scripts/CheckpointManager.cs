@@ -7,7 +7,7 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager instance;
     private Vector2 position;
-    public EventHandler OnRestObject;
+    public EventHandler OnResetObject;
 
     private void Awake()
     {

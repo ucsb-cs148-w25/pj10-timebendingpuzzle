@@ -12,7 +12,7 @@ public class SpikesKill : MonoBehaviour
             // Debug.Log(CheckpointManager.instance.GetPosition());
             other.transform.position = new Vector3(CheckpointManager.instance.GetPosition().x, CheckpointManager.instance.GetPosition().y);
             //reset player time stack;
-            CheckpointManager.instance.OnRestObject?.Invoke(this, EventArgs.Empty);
+            CheckpointManager.instance.OnResetObject?.Invoke(this, EventArgs.Empty);
         }
     }
 }

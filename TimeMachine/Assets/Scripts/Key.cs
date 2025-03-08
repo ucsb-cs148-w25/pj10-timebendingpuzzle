@@ -15,7 +15,7 @@ public class Key : MonoBehaviour
         keyRenderer = GetComponent<SpriteRenderer>();
         originalPosition = transform.position;
         if(CheckpointManager.instance){
-            CheckpointManager.instance.OnRestObject += ResetKey;
+            CheckpointManager.instance.OnResetObject += ResetKey;
         }
         
     }
@@ -52,6 +52,6 @@ public class Key : MonoBehaviour
     }
 
     private void OnDestroy() {
-        CheckpointManager.instance.OnRestObject -= ResetKey;
+        CheckpointManager.instance.OnResetObject -= ResetKey;
     }
 }
