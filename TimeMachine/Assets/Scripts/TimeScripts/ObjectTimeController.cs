@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ObjectTimeController : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class ObjectTimeController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private IRewindable rewindable;
-    private const int rewindSpeedMultiplier = 3; 
+
+    [SerializeField] private bool fastRewind = false;
+    private int rewindSpeedMultiplier; 
 
     private void Start()
     {
@@ -19,19 +22,22 @@ public class ObjectTimeController : MonoBehaviour
         rewindable = GetComponent<IRewindable>();
 
         Time.fixedDeltaTime = 0.005f;
-
-        for (int i = 0; i < 20; i++) StoreRewindSeconds();
+        
+        if(fastRewind){
+            rewindSpeedMultiplier = 3;
+            for (int i = 0; i < 20; i++) StoreRewindSeconds();
+        } else rewindSpeedMultiplier = 1;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKey(KeyCode.Q)) 
         {
             if (rb && rb.bodyType != RigidbodyType2D.Static) rb.isKinematic = true;
             rewinding = true;
-            StartCoroutine(FastRewindStart());
+            if(fastRewind) StartCoroutine(FastRewindStart());
         }
-        else if (Input.GetKeyUp(KeyCode.Q))
+        else// if (Input.GetKeyUp(KeyCode.Q))
         {
             if (rb && rb.bodyType != RigidbodyType2D.Static) rb.isKinematic = false;
             rewinding = false;
