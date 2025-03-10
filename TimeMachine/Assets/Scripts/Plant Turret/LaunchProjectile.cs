@@ -49,4 +49,9 @@ public class LaunchProjectile : MonoBehaviour, IRewindable
         timeElapsed = firingHistory.Last.Value;
         firingHistory.RemoveLast();
     }
+
+    void IRewindable.ClearHistory()
+    {
+        firingHistory.Clear();
+    }
 }

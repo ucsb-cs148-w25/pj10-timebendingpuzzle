@@ -46,6 +46,11 @@ public class MoveProjectile : MonoBehaviour, IRewindable
         }
     }
 
+    void IRewindable.ClearHistory()
+    {
+        projectileHistory.Clear();
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         ContactPoint2D[] contacts = new ContactPoint2D[collision.contactCount];

@@ -96,4 +96,9 @@ public class ObjectTimeController : MonoBehaviour
             yield return null;
         }
     }
+
+    void CheckpointReset(){
+        rewindFrames.Clear();
+        rewindable?.ClearHistory();
+    }
 }
