@@ -7,6 +7,7 @@ public class RotatingArrow : MonoBehaviour
     private Renderer playerRenderer;
     private Color originalColor;
     private Color blinkColor = new Color(156f / 255f, 55f / 255f, 84f / 255f, 1f); // #9C3754
+    private Color blinkColor2 = new Color(37f / 255f, 150f / 255f, 190f / 255f, 1f); // #9C3754
 
     public float blinkSpeed = 20f; // Adjust speed of blinking
 
@@ -41,6 +42,15 @@ public class RotatingArrow : MonoBehaviour
             {
                 float colorOsc = (Mathf.Sin(Time.time * blinkSpeed) + 1f) / 2f;
                 playerRenderer.material.color = Color.Lerp(originalColor, blinkColor, colorOsc);
+            }
+        }
+        else if (Input.GetKey(KeyCode.R))
+        {
+            // Oscillate player's color smoothly
+            if (playerRenderer != null)
+            {
+                float colorOsc = (Mathf.Sin(Time.time * blinkSpeed) + 1f) / 2f;
+                playerRenderer.material.color = Color.Lerp(Color.blue, Color.white, colorOsc);
             }
         }
         else
