@@ -97,7 +97,7 @@ public class ObjectTimeController : MonoBehaviour
         }
     }
 
-    void CheckpointReset(){
+    public void CheckpointReset(){
         rewindFrames.Clear();
         rewindable?.ClearHistory();
     }

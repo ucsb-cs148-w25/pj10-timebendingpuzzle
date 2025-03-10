@@ -123,7 +123,7 @@ public class TimeController : MonoBehaviour
         return (false, Vector2.zero);
     }
 
-    void CheckpointReset(){
+    public void CheckpointReset(){
         rewindFrames.Clear();
     }
 
