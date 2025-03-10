@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,15 @@ public class MovingSpikes : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         origin = transform.position;
+
         // StartMoving();
+    }
+    private void Start() {
+        CheckpointManager.instance.OnResetObject += ResetSpikes;
+    }
+
+    private void OnDestroy() {
+        CheckpointManager.instance.OnResetObject -= ResetSpikes;
     }
 
     // Update is called once per frame
@@ -30,5 +39,12 @@ public class MovingSpikes : MonoBehaviour
     public void StopMoving(){
         isMoving = false;
         rb.velocity = new Vector2(0, 0);
+    }
+
+    private void ResetSpikes(object sender, EventArgs e){
+        //clean object time stack
+        StopMoving();
+        transform.position = origin;
+        
     }
 }
