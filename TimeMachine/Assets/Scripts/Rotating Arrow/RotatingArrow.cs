@@ -43,6 +43,18 @@ public class RotatingArrow : MonoBehaviour
                 playerRenderer.material.color = Color.Lerp(originalColor, blinkColor, colorOsc);
             }
         }
+        else if (Input.GetKey(KeyCode.R))
+        {
+            // Rotate the arrow instantly
+            transform.Rotate(0, 0, rotationSpeed);
+
+            // Oscillate player's color smoothly
+            if (playerRenderer != null)
+            {
+                float colorOsc = (Mathf.Sin(Time.time * blinkSpeed) + 1f) / 2f;
+                playerRenderer.material.color = Color.Lerp(Color.blue, Color.white, colorOsc);
+            }
+        }
         else
         {
             // Restore the player's original color when Q is released
