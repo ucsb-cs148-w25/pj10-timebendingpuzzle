@@ -13,6 +13,8 @@ public class TimeController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     CapsuleCollider2D playerCollider;
+
+    //bool checkpoint = false;
     //private RewindCollisionCheck rewindCollisionChecker; 
     //private float collisionTime = 0.0f;
     //private float collisionPenetrationThreshold = 0.1f;
@@ -66,6 +68,7 @@ public class TimeController : MonoBehaviour
         //}
         if(rewindFrames.Count == 0 || rewindFrames.Last.Value.GetPosition() != (Vector2) transform.position){ // OR allowed since boolean logic ops are short circuiting
             TimeInfo timeInfo = new TimeInfo(transform.position, rb.velocity, anim.GetInteger("state"), sprite.flipX);
+            //timeInfo.SetCheckpoint(checkpoint);
             rewindFrames.AddLast(timeInfo);
         }
     }
@@ -119,5 +122,27 @@ public class TimeController : MonoBehaviour
         //Debug.Log("NOT COLLIDING");
         return (false, Vector2.zero);
     }
+
+    public void CheckpointReset(){
+        rewindFrames.Clear();
+    }
+
+    //void checkpointReset(){
+    //    while(rewindFrames.Count > 0 && !rewindFrames.Last.Value.GetCheckpoint()){
+    //        rewindFrames.RemoveLast();
+    //    }
+    //}
+
+    //void OnTriggerEnter2D(Collider2D other){
+    //    if(other.CompareTag("Checkpoint")){
+    //        checkpoint = true;
+    //    }
+    //}
+//
+    //void OnTriggerExit2D(Collider2D other){
+    //    if(other.CompareTag("Checkpoint")){
+    //        checkpoint = false;
+    //    }
+    //}
     
 }

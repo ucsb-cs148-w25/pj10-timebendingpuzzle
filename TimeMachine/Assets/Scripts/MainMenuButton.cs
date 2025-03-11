@@ -42,6 +42,11 @@ public class MainMenuButton : MonoBehaviour
         // SceneManager.LoadScene("Level_2");
     }
 
+    public void credit()
+    {
+        StartCoroutine(WaitSecond("EndScene"));
+    }
+
     public void quit()
     {
         Application.Quit();
