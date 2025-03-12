@@ -15,6 +15,7 @@ public class SPM : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 10f;
 
+    public float bounceForce;
     public float knockbackForce;
     public float knockbackCounter;
     public float knockbackTotalTime;
