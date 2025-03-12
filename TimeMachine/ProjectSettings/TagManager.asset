@@ -12,6 +12,8 @@ TagManager:
   - Ground
   - bridge
   - Bridge
+  - Snail
+  - SnailPlatform
   layers:
   - Default
   - TransparentFX

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour, IRewindable
 {
-    public KeyCode interactionKey = KeyCode.E; // Key to interact with the bridge
+    public KeyCode interactionKey = KeyCode.E; // Key to interact with the lever
     private bool isPlayerInRange = false; // Tracks if the player is near the lever
-    private bool isBridgeDown = false; // Tracks bridge state
+    private bool isBridgeMovingDown = false; // Tracks rotation state
 
     private Transform bridge; // Reference to the bridge GameObject
     private Quaternion initialRotation; // Stores initial upright rotation
-    private Quaternion downRotation; // Stores the 90-degree down rotation
+    private Quaternion targetRotation; // Stores the 130-degree down rotation
+
+    public float rotationSpeed = 100f; // Rotation speed in degrees per second
 
     // State history for rewinding
     private LinkedList<bool> stateHistory = new LinkedList<bool>();
@@ -28,23 +30,26 @@ public class Lever : MonoBehaviour, IRewindable
 
         // Store the initial rotation of the bridge
         initialRotation = bridge.rotation;
-        downRotation = initialRotation * Quaternion.Euler(0f, 0f, -90f); // 90-degree drop
+        targetRotation = initialRotation * Quaternion.Euler(0f, 0f, -130f); // Rotate 130 degrees down
     }
 
     void Update()
     {
-        // Debugging: Check key press
-        if (Input.GetKeyDown(interactionKey))
-        {
-            Debug.Log("E key pressed.");
-        }
-
-        // Toggle bridge position when player is in range and presses 'E'
+        // Toggle rotation when player is in range and presses 'E'
         if (isPlayerInRange && Input.GetKeyDown(interactionKey))
         {
-            Debug.Log("Bridge toggled!");
-            isBridgeDown = !isBridgeDown; // Toggle state
-            bridge.rotation = isBridgeDown ? downRotation : initialRotation; // Instantly switch rotation
+            Debug.Log("Bridge rotation toggled!");
+            isBridgeMovingDown = !isBridgeMovingDown; // Toggle state
+        }
+
+        // Rotate smoothly using RotateTowards
+        if (isBridgeMovingDown)
+        {
+            bridge.rotation = Quaternion.RotateTowards(bridge.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            bridge.rotation = Quaternion.RotateTowards(bridge.rotation, initialRotation, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -70,15 +75,14 @@ public class Lever : MonoBehaviour, IRewindable
 
     public void SaveState()
     {
-        stateHistory.AddLast(isBridgeDown);
+        stateHistory.AddLast(isBridgeMovingDown);
     }
 
     public void RewindState()
     {
         if (stateHistory.Count > 0)
         {
-            isBridgeDown = stateHistory.Last.Value;
-            bridge.rotation = isBridgeDown ? downRotation : initialRotation;
+            isBridgeMovingDown = stateHistory.Last.Value;
             stateHistory.RemoveLast();
         }
     }
