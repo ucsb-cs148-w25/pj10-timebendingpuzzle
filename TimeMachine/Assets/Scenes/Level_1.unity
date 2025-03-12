@@ -28630,6 +28630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4111f60a277a4b63923b517b61d5273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelEndPrefab: {fileID: 0}
 --- !u!61 &1878902514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30448,6 +30449,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4245009425092924820, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245009425092924820, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245009425092924820, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627550307414058355, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627550307414058355, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8022778773235085633, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.354636
@@ -30491,6 +30512,10 @@ PrefabInstance:
     - target: {fileID: 8249733994228147717, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
       propertyPath: m_Name
       value: MenuController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8249733994228147717, guid: 27d0f5e023b4244ceacb8fb8e2d0c9de, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
