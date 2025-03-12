@@ -42,6 +42,11 @@ public class MainMenuButton : MonoBehaviour
         // SceneManager.LoadScene("Level_2");
     }
 
+    public void credit()
+    {
+        StartCoroutine(WaitSecond("EndScene"));
+    }
+
     public void quit()
     {
         Application.Quit();
@@ -51,5 +56,10 @@ public class MainMenuButton : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void restartGame()
+    {
+        StartCoroutine(WaitSecond("MainMenu"));
     }
 }

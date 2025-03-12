@@ -14,6 +14,13 @@ public class SPM : MonoBehaviour
     [SerializeField] private LayerMask jumpbleGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 10f;
+
+    public float bounceForce;
+    public float knockbackForce;
+    public float knockbackCounter;
+    public float knockbackTotalTime;
+    public bool knockbackRight;
+
     public AudioSource Audio;
     public AudioClip jumpSound;
     public AudioClip moveSound;
@@ -45,8 +52,6 @@ public class SPM : MonoBehaviour
             dirX = Input.GetAxisRaw("Horizontal");
             rb.velocity = new Vector2(dirX*moveSpeed,rb.velocity.y);
 
-
-
             if (Input.GetButtonDown("Jump") && IsGrounded()){
                 Audio.clip = jumpSound;
                 Audio.Play();
@@ -54,6 +59,29 @@ public class SPM : MonoBehaviour
             }
 
             UpdateAnimationState();
+        }
+        if(knockbackCounter > 0){
+            sprite.color = new Color(1f, 0f, 0f, 0.85f);
+        }
+        else{
+            sprite.color = Color.white;
+        }
+    }
+
+    private void FixedUpdate() 
+    {
+        if(knockbackCounter <= 0){
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
+        else{
+            if(knockbackRight == true){
+                rb.velocity = new Vector2(-knockbackForce, knockbackForce/5);
+            }
+            if(knockbackRight == false){
+                rb.velocity = new Vector2(knockbackForce, knockbackForce/5);
+            }
+
+            knockbackCounter -= Time.deltaTime;
         }
     }
 
@@ -100,5 +128,13 @@ public class SPM : MonoBehaviour
         rb.velocity = Vector2.zero; // Stop any movement
         rb.bodyType = RigidbodyType2D.Static; // Completely disable physics
         coll.enabled = false; // Disable collider to prevent interactions
+    }
+
+    public Rigidbody2D GetRB(){
+        return rb;
+    }
+
+    public float GetJumpForce(){
+        return jumpForce;
     }
 }
