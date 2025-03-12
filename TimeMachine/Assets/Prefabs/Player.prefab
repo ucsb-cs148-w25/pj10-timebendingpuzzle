@@ -154,8 +154,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002516669, y: -0.02491534}
-  m_Size: {x: 0.21430087, y: 0.2523868}
+  m_Offset: {x: 0.002516669, y: -0.027364507}
+  m_Size: {x: 0.21430087, y: 0.25728512}
   m_Direction: 0
 --- !u!114 &9145982903769352726
 MonoBehaviour:
@@ -174,6 +174,7 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 7
   jumpForce: 7
+  bounceForce: 0
   knockbackForce: 5
   knockbackCounter: 0
   knockbackTotalTime: 0.2
@@ -1244,6 +1245,10 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 9145982903769352726}
+    - target: {fileID: 8764390540697651260, guid: 35b8bce522278dbeba0e69b77d2feb16, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
