@@ -7,37 +7,59 @@ public class MainMenuButton : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene("Level_1");
+        StartCoroutine(WaitSecond("LevelSelection"));
+        // SceneManager.LoadScene("Level_1");
     }
 
     public void levels()
     {
-        SceneManager.LoadScene("LevelSelection");
+        StartCoroutine(WaitSecond("LevelSelection"));
+        // SceneManager.LoadScene("LevelSelection");
     }
 
     public void manual()
     {
-        SceneManager.LoadScene("Instruction");
+        StartCoroutine(WaitSecond("Instruction"));
+        // SceneManager.LoadScene("Instruction");
     }
 
 
     public void back()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(WaitSecond("MainMenu"));
+        // SceneManager.LoadScene("MainMenu");
     }
 
     public void level1()
     {
-        SceneManager.LoadScene("Level_1");
+        StartCoroutine(WaitSecond("Level_1"));
+        // SceneManager.LoadScene("Level_1");
     }
 
     public void level2()
     {
-        SceneManager.LoadScene("Level_2");
+        StartCoroutine(WaitSecond("Level_2"));
+        // SceneManager.LoadScene("Level_2");
+    }
+
+    public void credit()
+    {
+        StartCoroutine(WaitSecond("EndScene"));
     }
 
     public void quit()
     {
         Application.Quit();
+    }
+
+    private IEnumerator WaitSecond(string sceneName)
+    {
+        yield return new WaitForSeconds(0.1f);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void restartGame()
+    {
+        StartCoroutine(WaitSecond("MainMenu"));
     }
 }

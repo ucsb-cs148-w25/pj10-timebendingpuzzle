@@ -86,4 +86,9 @@ public class Lever : MonoBehaviour, IRewindable
             stateHistory.RemoveLast();
         }
     }
+
+    public void ClearHistory()
+    {
+        stateHistory.Clear();
+    }
 }

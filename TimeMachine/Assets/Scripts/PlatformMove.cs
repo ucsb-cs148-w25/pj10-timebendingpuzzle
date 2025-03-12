@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatforms : MonoBehaviour
 {
     public float speed = 2f; 
     public float height = 3f; 

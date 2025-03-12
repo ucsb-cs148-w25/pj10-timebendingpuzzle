@@ -1,7 +1,12 @@
 # Leadership roles
 
-| Date      | Name              | Activity                                               |
-|-----------|-------------------|--------------------------------------------------------|
-| Fri 1/10 |  Tom Shangguan     | Led team discussion to define MVP                      | 
-| Fri 1/17 |  Michael Petrus | Led team discussion of Sprint01 and learning plan      | 
-| Fri 01/24 | Sanil Katula       | Will lead first Retro                                  | 
+| Name              | Role                                               |
+|-------------------|--------------------------------------------------------|
+|  Tom Shangguan     | Product Owner                      | 
+|  Michael Petrus | Testing/QA Coordinator, Retro 3 Leader      | 
+| Sanil Katula       | Scrum Master, Retro 1 Leader                                 | 
+|  Mukun Zhou        | Retro 2 Leader                                      |
+| Jason Vu           | UX Coordinator, Final presentation leader (week 9/10)                  |
+| Rui Tong           | Design Document Coordinator            |
+| Montgomery Forde   |   Deployment Document Coordinator           |
+| Sam Bian           |     User Manual Coordinator                |

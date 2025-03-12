@@ -73,4 +73,8 @@ public class RotatingDoor : MonoBehaviour, IRewindable
         }
         rotationHistory.RemoveLast();
     }
+
+    public void ClearHistory(){
+        rotationHistory.Clear();
+    }
 }

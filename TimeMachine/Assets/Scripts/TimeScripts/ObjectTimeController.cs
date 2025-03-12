@@ -6,68 +6,99 @@ using UnityEngine.AI;
 public class ObjectTimeController : MonoBehaviour
 {
     private bool rewinding = false;
-   
     private LinkedList<ObjectTimeInfo> rewindFrames = new LinkedList<ObjectTimeInfo>();
-    private const int rewindTime = 8; // 8 seconds of rewinding time, if we choose to cap it
+    private const int rewindTime = 8; 
     private Rigidbody2D rb;
-    //privateted Animator anim;
     private SpriteRenderer sprite;
     private IRewindable rewindable;
 
-    private void Start(){
+    [SerializeField] private bool fastRewind = false;
+    private int rewindSpeedMultiplier; 
+
+    private void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         rewindable = GetComponent<IRewindable>();
+
+        Time.fixedDeltaTime = 0.005f;
+        
+        if(fastRewind){
+            rewindSpeedMultiplier = 3;
+            for (int i = 0; i < 20; i++) StoreRewindSeconds();
+        } else rewindSpeedMultiplier = 1;
     }
 
-    private void Update(){
-        if(Input.GetKey(KeyCode.Q)){
-            if(rb && (rb.bodyType != RigidbodyType2D.Static)) rb.isKinematic = true;
-            rewinding = true; // TODO: implement event manager to tell other things to stop moving/doing their thing while we are rewinding
-        } else{
-            if(rb && (rb.bodyType != RigidbodyType2D.Static)) rb.isKinematic = false;
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Q)) 
+        {
+            if (rb && rb.bodyType != RigidbodyType2D.Static) rb.isKinematic = true;
+            rewinding = true;
+            if(fastRewind) StartCoroutine(FastRewindStart());
+        }
+        else// if (Input.GetKeyUp(KeyCode.Q))
+        {
+            if (rb && rb.bodyType != RigidbodyType2D.Static) rb.isKinematic = false;
             rewinding = false;
         }
     }
 
-    private void FixedUpdate(){
-        if(rewinding == true){
-            RewindStoredSeconds(); // if rewinding, we need to consume our stored time. FixedUpdate for consistency
-        } else{
-            StoreRewindSeconds(); // Store our points in time in FixedUpdate, so that large frame spikes dont reemulate that spike when rewinding.
+    private void FixedUpdate()
+    {
+        if (rewinding)
+        {
+            for (int i = 0; i < rewindSpeedMultiplier && rewindFrames.Count > 0; i++) 
+            {
+                RewindStoredSeconds(); 
+            }
+        }
+        else
+        {
+            StoreRewindSeconds();
         }
     }
 
-    private void StoreRewindSeconds(){
-        //while(rewindFrames.Count * Time.fixedDeltaTime >= rewindTime){ // while in case fixed intervals turn out to be a bad idea, then i can easily swap to normal timeupdates
-        //    rewindFrames.RemoveFirst();
-        //}
+    private void StoreRewindSeconds()
+    {
         ObjectTimeInfo timeInfo = new ObjectTimeInfo(transform.position, rb ? rb.velocity : Vector2.zero);
-        if (sprite) timeInfo.setFlip(sprite.flipX);
-        timeInfo.setRotation(transform.rotation);
+        if (sprite) timeInfo.SetFlip(sprite.flipX);
+        timeInfo.SetRotation(transform.rotation);
         rewindFrames.AddLast(timeInfo);
-        //if(anim != null){
-        //    timeInfo.setAnim(anim.GetInteger("state"));
-        //}
-        //rewindFrames.AddLast(timeInfo);
-        rewindable?.SaveState(); // custom info, beyond position and velocity
+        rewindable?.SaveState();
     }
 
-    private void RewindStoredSeconds(){
-        if(rewindFrames.Count > 0){
-            transform.position = rewindFrames.Last.Value.GetPosition();
-            if(rb) rb.velocity = rewindFrames.Last.Value.GetVelocity();
-            //if(anim != null){
-            //    anim.SetInteger("state", rewindFrames.Last.Value.GetAnimState());
-            //}
-            if(sprite) sprite.flipX = rewindFrames.Last.Value.GetSpriteFlip();
-            transform.rotation = rewindFrames.Last.Value.GetRotation();
+    private void RewindStoredSeconds()
+    {
+        if (rewindFrames.Count > 0)
+        {
+            var lastFrame = rewindFrames.Last.Value;
+
+            transform.position = lastFrame.GetPosition();
+            if (rb && rb.bodyType != RigidbodyType2D.Static) rb.velocity = lastFrame.GetVelocity();
+            if (sprite) sprite.flipX = lastFrame.GetSpriteFlip();
+            transform.rotation = lastFrame.GetRotation();
             rewindFrames.RemoveLast();
-            rewindable?.RewindState(); // custom rewinding per object
-        } else{
-            if(rb) rb.isKinematic = false;
+            rewindable?.RewindState();
+        }
+        else
+        {
+            if (rb) rb.isKinematic = false;
             rewinding = false;
         }
+    }
+
+    private IEnumerator FastRewindStart()
+    {
+        for (int i = 0; i < 10 && rewindFrames.Count > 0; i++) 
+        {
+            RewindStoredSeconds();
+            yield return null;
+        }
+    }
+
+    public void CheckpointReset(){
+        rewindFrames.Clear();
+        rewindable?.ClearHistory();
     }
 }

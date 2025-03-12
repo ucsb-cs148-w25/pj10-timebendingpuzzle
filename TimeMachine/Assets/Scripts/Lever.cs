@@ -69,6 +69,10 @@ public class LeverController : MonoBehaviour, IRewindable
         isPlatformUp = stateHistory.Last.Value;
         stateHistory.RemoveLast();
     }
+
+    public void ClearHistory(){
+        stateHistory.Clear();
+    }
 }
 
 
