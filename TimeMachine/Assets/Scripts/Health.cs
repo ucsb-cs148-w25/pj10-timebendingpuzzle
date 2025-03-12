@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] private List<GameObject> Lives;
-    private float currLives;
+    public int currLives;
 
     private void Start() 
     {
