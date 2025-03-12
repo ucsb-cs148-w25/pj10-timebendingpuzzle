@@ -7,18 +7,22 @@ public class RotatingPlatform : MonoBehaviour
     public float rotationSpeed = 90f; // Degrees per second
     private bool isRotating = false;
     private bool rotateForward = true; // Tracks the last state
-
+    private bool activated = false;
     void Update()
     {
         if (Input.GetKey(KeyCode.Q) && !isRotating) // If Q is held, go back
         {
-            StartCoroutine(RotatePlatformCoroutine(rotateForward ? 90f : -90f)); 
-            rotateForward = !rotateForward; // Toggle back
+            if (activated == true){
+                StartCoroutine(RotatePlatformCoroutine(rotateForward ? 90f : -90f)); 
+                rotateForward = !rotateForward; // Toggle back
+            }
+            
         }
     }
 
     public void RotatePlatform() // Call this from a game button
     {
+        activated = true;
         if (!isRotating)
         {
             float angle = rotateForward ? 90f : -90f;
