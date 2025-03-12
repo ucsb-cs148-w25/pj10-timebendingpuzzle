@@ -43,6 +43,7 @@ public class MovingSpikes : MonoBehaviour
 
     private void ResetSpikes(object sender, EventArgs e){
         //clean object time stack
+        GetComponent<ObjectTimeController>().CheckpointReset();
         StopMoving();
         transform.position = origin;
         
