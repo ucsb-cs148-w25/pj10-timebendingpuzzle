@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SPM : MonoBehaviour
@@ -24,12 +25,14 @@ public class SPM : MonoBehaviour
     public AudioSource Audio;
     public AudioClip jumpSound;
     public AudioClip moveSound;
+    public bool isStop = false;
 
     // Global variable to control starting orientation.
     // Default is true, meaning the player spawns facing right.
     [SerializeField] private bool startFacingRight = true;
 
-    private enum MovementState { idle, running, jumping, falling }
+    public enum MovementState { idle, running, jumping, falling }
+    public MovementState state;
 
     void Start()
     {
@@ -45,6 +48,13 @@ public class SPM : MonoBehaviour
 
     void Update()
     {
+        if (isStop)
+        {
+            state = MovementState.idle;
+            anim.SetInteger("state", (int)state);
+            return;
+        }
+
         if (!dead)
         {
             dirX = Input.GetAxisRaw("Horizontal");
