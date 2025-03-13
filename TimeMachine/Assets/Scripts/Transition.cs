@@ -24,7 +24,7 @@ public class Transition : MonoBehaviour
 
         Level_End_Invoke levelEndMenu = levelEndInstance.GetComponent<Level_End_Invoke>();
         if (levelEndMenu != null)
-            levelEndMenu.Initialize(GetComponent<Health>().currLives);
+            levelEndMenu.Initialize(other.GetComponent<Health>().currLives);
         else
             Debug.LogError("LevelEndMenu script not found on prefab!");
     }
