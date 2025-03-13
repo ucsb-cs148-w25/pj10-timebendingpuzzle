@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4403652c0abfa488b0715482cd64f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   playerHealth: {fileID: 0}
   playerMovement: {fileID: 0}
 --- !u!95 &2951304933363824170

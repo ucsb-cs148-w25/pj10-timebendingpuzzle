@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!70 &297716651
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2131,6 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &792428630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!61 &792428633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3825,7 +3828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706289151431360925, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3253918218275743881, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4515,6 +4518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &1526068235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &1539429126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,6 +6178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
