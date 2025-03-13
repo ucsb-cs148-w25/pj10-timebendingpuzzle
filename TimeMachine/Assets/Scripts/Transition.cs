@@ -9,9 +9,21 @@ public class Transition : MonoBehaviour
     public GameObject levelEndPrefab;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject levelEndInstance = Instantiate(levelEndPrefab);
-        other.gameObject.GetComponent<SPM>().isStop = true;
         
+        SPM spmComponent = other.gameObject.GetComponent<SPM>();
+        if (spmComponent != null)
+        {
+            spmComponent.isStop = true;
+        }
+        else
+        {
+            Debug.LogError("SPM component not found on the colliding object!");
+            return;
+        }
+        GameObject levelEndInstance = Instantiate(levelEndPrefab);
+
+        //other.gameObject.GetComponent<SPM>().isStop = true;
+
         Transform canvas = levelEndInstance.transform.Find("Canvas");
         if (canvas != null)
         {
