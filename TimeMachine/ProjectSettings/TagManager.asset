@@ -44,7 +44,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: New Layer 1
+  - name: Decoration
     uniqueID: 2645250555
     locked: 0
   - name: Default
