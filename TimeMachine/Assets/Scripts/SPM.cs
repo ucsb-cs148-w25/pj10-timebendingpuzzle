@@ -82,21 +82,15 @@ public class SPM : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (knockbackCounter <= 0)
-        {
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-        }
-        else
-        {
-            if (knockbackRight)
-            {
-                rb.velocity = new Vector2(-knockbackForce, knockbackForce / 5);
-            }
-            else
-            {
-                rb.velocity = new Vector2(knockbackForce, knockbackForce / 5);
-            }
+        if (knockbackCounter > 0){
+            rb.velocity = new Vector2(knockbackRight ? -knockbackForce : knockbackForce, knockbackForce / 5);
             knockbackCounter -= Time.deltaTime;
+        }
+        else if (rb.velocity.y > 0){ // If player is bouncing, don't overwrite it
+            // Let the bounce effect continue naturally
+        }
+        else{
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
     }
 
@@ -157,9 +151,8 @@ public class SPM : MonoBehaviour
         return rb;
     }
 
-    public float GetJumpForce()
-    {
-        return jumpForce;
+    public void Bounce(){
+        rb.velocity = new Vector2(rb.velocity.x, 10);    
     }
 
     [ContextMenu("Set Start Facing Left")]

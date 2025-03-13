@@ -174,6 +174,7 @@ MonoBehaviour:
     m_Bits: 64
   moveSpeed: 7
   jumpForce: 7
+  bounceForce: 0
   knockbackForce: 5
   knockbackCounter: 0
   knockbackTotalTime: 0.2
@@ -181,6 +182,9 @@ MonoBehaviour:
   Audio: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   moveSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+  isStop: 0
+  startFacingRight: 1
+  state: 0
 --- !u!95 &2999782848956749755
 Animator:
   serializedVersion: 5
@@ -218,6 +222,7 @@ MonoBehaviour:
   - {fileID: 1283247844153155092}
   - {fileID: 8484675761776075483}
   - {fileID: 1400375835916364000}
+  currLives: 0
 --- !u!114 &6077381126287227217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +708,7 @@ MonoBehaviour:
   - {fileID: 1283247844153155092}
   - {fileID: 8484675761776075483}
   - {fileID: 1400375835916364000}
+  currLives: 0
 --- !u!1 &5064223656415100076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1250,10 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 9145982903769352726}
+    - target: {fileID: 8764390540697651260, guid: 35b8bce522278dbeba0e69b77d2feb16, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -14061,7 +14061,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 88799700015881525, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3253918218275743881, guid: 2d926e8eee6054b2ab81b559e1491e8b, type: 3}
       propertyPath: m_LocalScale.x
@@ -17495,6 +17495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lives: []
+  currLives: 0
 --- !u!95 &5548836257086783408
 Animator:
   serializedVersion: 5
@@ -17638,6 +17639,9 @@ MonoBehaviour:
   Audio: {fileID: 0}
   jumpSound: {fileID: 0}
   moveSound: {fileID: 0}
+  isStop: 0
+  startFacingRight: 1
+  state: 0
 --- !u!114 &8691448108883040813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17663,6 +17667,9 @@ MonoBehaviour:
   Audio: {fileID: 0}
   jumpSound: {fileID: 0}
   moveSound: {fileID: 0}
+  isStop: 0
+  startFacingRight: 1
+  state: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
