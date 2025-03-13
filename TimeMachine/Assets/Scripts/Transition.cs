@@ -9,8 +9,14 @@ public class Transition : MonoBehaviour
     public GameObject levelEndPrefab;
     private void OnTriggerEnter2D(Collider2D other)
     {
+        SPM spmComponent = other.gameObject.GetComponent<SPM>();
+        if(spmComponent != null){
+            spmComponent.isStop = true;
+        }else{
+            return;
+        }
+        
         GameObject levelEndInstance = Instantiate(levelEndPrefab);
-        other.gameObject.GetComponent<SPM>().isStop = true;
         
         Transform canvas = levelEndInstance.transform.Find("Canvas");
         if (canvas != null)
@@ -24,7 +30,7 @@ public class Transition : MonoBehaviour
 
         Level_End_Invoke levelEndMenu = levelEndInstance.GetComponent<Level_End_Invoke>();
         if (levelEndMenu != null)
-            levelEndMenu.Initialize(GetComponent<Health>().currLives);
+            levelEndMenu.Initialize(other.GetComponent<Health>().currLives);
         else
             Debug.LogError("LevelEndMenu script not found on prefab!");
     }
