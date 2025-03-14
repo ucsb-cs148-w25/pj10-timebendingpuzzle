@@ -18,6 +18,7 @@ public class CheckpointManager : MonoBehaviour
             return;
         }
         instance = this;
+        position = transform.position;
     }
 
     public void SetPosition(Vector2 pos){

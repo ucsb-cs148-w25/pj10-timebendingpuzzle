@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 2129566038073003026}
   - component: {fileID: 3355301434237329421}
   - component: {fileID: 7351794670448599491}
+  - component: {fileID: 4412173167623228704}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Weak Point
@@ -271,3 +272,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   moveSpeed: 2
+--- !u!114 &4412173167623228704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778282968974018572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba438b719a6b671a4b53ea62d5798621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  bounceForce: 5.5
