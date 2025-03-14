@@ -6,7 +6,7 @@ public class TelePortal : MonoBehaviour
 {
     public SPM playerMovement;
     public TelePortal destination;
-    public float pause = 0f;
+    public float pause;
     private bool inActive = false;
     
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class TelePortal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Player" && inActive == false){
+            Freeze();
             destination.Freeze();
             collision.transform.position = destination.GetPos();
         }
@@ -29,15 +30,15 @@ public class TelePortal : MonoBehaviour
 
     public void Freeze(){
         inActive = true;
-        pause = 10f;
+        pause = 1f;
     }
     // Update is called once per frame
     void Update()
     {
-        while(pause > 0f){
+        if(pause > 0f && inActive){
             pause -= Time.deltaTime;
         }
-        if(pause <= 0f){
+        else if(pause <= 0f){
             inActive = false;
         }
         
