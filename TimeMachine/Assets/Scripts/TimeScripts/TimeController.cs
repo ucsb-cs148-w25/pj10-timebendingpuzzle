@@ -92,7 +92,7 @@ public class TimeController : MonoBehaviour
     }
 
     public (bool, Vector2) rewindCausesCollision(Vector2 predictedPosition){
-        LayerMask layerMask = LayerMask.GetMask("Platform");
+        LayerMask layerMask = LayerMask.GetMask("Ground");
         float dist = Vector2.Distance(transform.position, predictedPosition);
         Vector2 dir = (predictedPosition - (Vector2) transform.position).normalized;
         RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, playerCollider.size, transform.eulerAngles.z, dir, dist, layerMask);

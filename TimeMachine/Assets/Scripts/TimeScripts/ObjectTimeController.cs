@@ -24,7 +24,7 @@ public class ObjectTimeController : MonoBehaviour
         Time.fixedDeltaTime = 0.005f;
         
         if(fastRewind){
-            rewindSpeedMultiplier = 3;
+            rewindSpeedMultiplier = 2;
             for (int i = 0; i < 20; i++) StoreRewindSeconds();
         } else rewindSpeedMultiplier = 1;
     }
