@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class ObjectTimeController : MonoBehaviour
 {
@@ -24,7 +23,7 @@ public class ObjectTimeController : MonoBehaviour
         Time.fixedDeltaTime = 0.005f;
         
         if(fastRewind){
-            rewindSpeedMultiplier = 3;
+            rewindSpeedMultiplier = 2;
             for (int i = 0; i < 20; i++) StoreRewindSeconds();
         } else rewindSpeedMultiplier = 1;
     }
@@ -35,7 +34,7 @@ public class ObjectTimeController : MonoBehaviour
         {
             if (rb && rb.bodyType != RigidbodyType2D.Static) rb.isKinematic = true;
             rewinding = true;
-            if(fastRewind) StartCoroutine(FastRewindStart());
+            //if(fastRewind) StartCoroutine(FastRewindStart());
         }
         else// if (Input.GetKeyUp(KeyCode.Q))
         {
@@ -90,7 +89,7 @@ public class ObjectTimeController : MonoBehaviour
 
     private IEnumerator FastRewindStart()
     {
-        for (int i = 0; i < 10 && rewindFrames.Count > 0; i++) 
+        for (int i = 0; i < rewindSpeedMultiplier && rewindFrames.Count > 0; i++) 
         {
             RewindStoredSeconds();
             yield return null;
