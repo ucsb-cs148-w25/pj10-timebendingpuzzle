@@ -87,7 +87,8 @@ public class MoveProjectile : MonoBehaviour, IRewindable
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.CompareTag("Player")){
-            playerMovement.GetRB().velocity = new Vector2(10, playerMovement.GetJumpForce() * 1.25f);
+            //playerMovement.GetRB().velocity = new Vector2(10, playerMovement.GetJumpForce() * 1.25f);
+            playerMovement.Bounce();
             collided = true;
             if (turret != null && turret.activeProjectile == this.gameObject)
             {
