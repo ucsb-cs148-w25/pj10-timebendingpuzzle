@@ -5420,7 +5420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.253765
+      value: -37.59
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5597,7 +5597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.581017
+      value: -33.34
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6464,7 +6464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 320284762}
   - component: {fileID: 320284763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6716,7 +6716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386149046}
   - component: {fileID: 386149047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18111,7 +18111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636547025}
   - component: {fileID: 636547026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18447,7 +18447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662046431}
   - component: {fileID: 662046432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23971,10 +23971,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6009971147841307822, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053354452}
   m_SourcePrefab: {fileID: 100100000, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
 --- !u!1 &743387816
 GameObject:
@@ -24431,6 +24435,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5562997, y: 0.14191377}
   m_EdgeRadius: 0
+--- !u!1 &827331705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+  m_PrefabInstance: {fileID: 1047194328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &827331712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827331705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c2f05c63c29388da42304ef2a93bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bridge: {fileID: 1873703874}
+  rotationSpeed: 0.01
+  interactionKey: 101
 --- !u!4 &829599378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7826772910676355322, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
@@ -24980,7 +25004,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995774983}
   - component: {fileID: 995774984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25664,10 +25688,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6009971147841307822, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827331712}
   m_SourcePrefab: {fileID: 100100000, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
 --- !u!1 &1056713396
 GameObject:
@@ -25985,7 +26013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191752090}
   - component: {fileID: 1191752091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26912,7 +26940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330632483}
   - component: {fileID: 1330632484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72639,7 +72667,7 @@ Transform:
   m_GameObject: {fileID: 1670919653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -12.88, y: 45.49, z: 0}
+  m_LocalPosition: {x: -12.88, y: 49.25, z: 0}
   m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -86238,7 +86266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843608354}
   - component: {fileID: 1843608355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86574,7 +86602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873703874}
   - component: {fileID: 1873703873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92713,6 +92741,25 @@ Transform:
   - {fileID: 371697002}
   m_Father: {fileID: 1630138288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2053354445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+  m_PrefabInstance: {fileID: 733537184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2053354452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053354445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0675ee4daa2e0a13a94e5a4130e2c3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gate: {fileID: 1043987519}
+  interactionKey: 101
 --- !u!1 &2058650207
 GameObject:
   m_ObjectHideFlags: 0
@@ -92723,7 +92770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058650208}
   - component: {fileID: 2058650209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93455,8 +93502,8 @@ SceneRoots:
   - {fileID: 241712366}
   - {fileID: 1873703874}
   - {fileID: 1622100825}
-  - {fileID: 733537184}
   - {fileID: 1047194328}
+  - {fileID: 733537184}
   - {fileID: 1043987519}
   - {fileID: 555993283}
   - {fileID: 1230101123}
