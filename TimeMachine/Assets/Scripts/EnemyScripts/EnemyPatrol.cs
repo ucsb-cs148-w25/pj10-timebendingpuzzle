@@ -38,6 +38,7 @@ public class EnemyPatrol : MonoBehaviour, IRewindable
     }
 
     void Patrol(){
+        Debug.Log("MOVING TOWARD: " + patrolDestination + patrolPoints[patrolDestination].position);
         if(patrolDestination == 0){
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[0].position, moveSpeed * Time.deltaTime);
             if(Vector2.Distance(transform.position, patrolPoints[0].position) < .2f){
@@ -56,7 +57,7 @@ public class EnemyPatrol : MonoBehaviour, IRewindable
 
     void Die(){
         float x = moveSpeed * (transform.position.x > patrolPoints[patrolDestination].position.x ? -1 : 1);
-        rb.velocity = new Vector2(x, rb.velocity.y + 2.5f * Physics2D.gravity.y * Time.deltaTime);
+        rb.velocity = new Vector2(x, -1 * Mathf.Abs(rb.velocity.y + 2.5f * Physics2D.gravity.y * Time.deltaTime));
     }
 
     public void SaveState()
