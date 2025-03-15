@@ -10,10 +10,13 @@ public class Elevator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, movePoints[1].position, moveSpeed * Time.deltaTime);
+        if (!Input.GetKey(KeyCode.Q)){
+            transform.position = Vector2.MoveTowards(transform.position, movePoints[1].position, moveSpeed * Time.deltaTime);
             if(Vector2.Distance(transform.position, movePoints[1].position) < .2f){
                 transform.position = movePoints[0].position;
             }
+        }
+        
         
     }
 }
