@@ -12240,6 +12240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 480981905}
   - component: {fileID: 480981906}
+  - component: {fileID: 480981907}
   m_Layer: 0
   m_Name: Wood Spike Fence
   m_TagString: Untagged
@@ -12316,6 +12317,21 @@ PolygonCollider2D:
       - {x: -3.6084132, y: 0.6030661}
       - {x: 5.6224227, y: 0.6024015}
   m_UseDelaunayMesh: 0
+--- !u!114 &480981907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480981904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e88ebd9223d9d4f94f1fd18fbf31c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 1086446714}
+  playerMovement: {fileID: 1086446716}
 --- !u!1 &485877310
 GameObject:
   m_ObjectHideFlags: 0
