@@ -179,9 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Thanks For Playing!
-
-'
+  m_text: "Thanks For \nPlaying!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b45be9e10dc0481891dac2eead4fb72, type: 2}
   m_sharedMaterial: {fileID: -765147485526100531, guid: 9b45be9e10dc0481891dac2eead4fb72, type: 2}
