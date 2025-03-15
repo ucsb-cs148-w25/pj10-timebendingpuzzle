@@ -27837,7 +27837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1448930932}
   m_Layer: 0
-  m_Name: Death Boxess
+  m_Name: Death Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27994,6 +27994,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2776612010948829683, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1086446714}
+    - target: {fileID: 2776612010948829683, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1086446716}
     - target: {fileID: 3732196993942730890, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
       propertyPath: playerMovement
       value: 
