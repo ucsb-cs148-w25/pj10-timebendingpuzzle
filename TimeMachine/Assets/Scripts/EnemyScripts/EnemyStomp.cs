@@ -8,7 +8,8 @@ public class EnemyStomp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Weak Point"){
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyPatrol>().killed = true;
             playerMovement.Bounce();
         }
     }
