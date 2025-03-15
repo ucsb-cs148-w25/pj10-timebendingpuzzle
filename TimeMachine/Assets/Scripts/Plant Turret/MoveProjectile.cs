@@ -1,32 +1,42 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MoveProjectile : MonoBehaviour, IRewindable
 {
-    private Vector3 velocity = new Vector2(10f, 0f);
+    private Vector3 velocity = new Vector2(6f, 0f);
     public int dir;
     private float lifetime;
     private bool collided = false;
+    public SPM playerMovement;
+    private LaunchProjectile turret;
 
     private LinkedList<Tuple<float, bool, Vector2>> projectileHistory = new LinkedList<Tuple<float, bool, Vector2>>(); //contains lifetime of object
 
     void Start(){
         velocity *= dir;
         lifetime = 0;
+        Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.useFullKinematicContacts = true;
+
+        turret = transform.parent.GetComponent<LaunchProjectile>();
     }
 
     void Update()
     {
-        if(!collided){
-            gameObject.transform.Translate(velocity * Time.deltaTime);
-            lifetime += Time.deltaTime;
-            if(lifetime >= 5) Destroy(gameObject); //StartCoroutine(Kill());
-        } else{
+        if(collided){
             velocity.y += 2.5f * Physics2D.gravity.y * Time.deltaTime; 
-            transform.Translate(velocity * Time.deltaTime);
+        }
+        transform.Translate(velocity * Time.deltaTime);
+        lifetime += Time.deltaTime;
+        if(lifetime >= 10){
+            if (turret != null && turret.activeProjectile == this.gameObject)
+            {
+                turret.activeProjectile = null;
+            }
+            Destroy(gameObject); //StartCoroutine(Kill());
         }
     }
 
@@ -66,7 +76,24 @@ public class MoveProjectile : MonoBehaviour, IRewindable
             Debug.Log("COLLIDED");
             velocity.x = velocity.x * dir * direction.x;
             collided = true;
+            if (turret != null && turret.activeProjectile == this.gameObject)
+            {
+                turret.activeProjectile = null;
+            }
             //StartCoroutine(Kill());
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("Player")){
+            //playerMovement.GetRB().velocity = new Vector2(10, playerMovement.GetJumpForce() * 1.25f);
+            playerMovement.Bounce();
+            collided = true;
+            if (turret != null && turret.activeProjectile == this.gameObject)
+            {
+                turret.activeProjectile = null;
+            }
         }
     }
 
