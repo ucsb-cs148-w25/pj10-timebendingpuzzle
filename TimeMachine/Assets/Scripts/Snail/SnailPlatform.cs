@@ -9,11 +9,18 @@ public class SnailPlatform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) // Check if Player lands on platform
         {
             AttachAndDetach playerScript = collision.gameObject.GetComponent<AttachAndDetach>();
+            TimeController timeController = collision.gameObject.GetComponent<TimeController>();
 
             if (playerScript != null && !playerScript.IsAttachedToSnail()) // If not attached, respawn
             {
                 collision.gameObject.transform.position = respawnPosition;
                 Debug.Log("Player fell onto SnailPlatform without snail! Respawning...");
+
+                // Clear rewind history so they cannot rewind before this event
+                if (timeController != null)
+                {
+                    timeController.CheckpointReset();
+                }
             }
         }
     }
