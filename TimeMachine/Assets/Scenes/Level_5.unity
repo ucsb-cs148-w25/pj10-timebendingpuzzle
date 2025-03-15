@@ -334,6 +334,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &40309290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 1150132617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &40309292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40309290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &57023188
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,6 +5335,24 @@ Transform:
   - {fileID: 185466422}
   m_Father: {fileID: 231604585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &135532833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3778282968974018572, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+  m_PrefabInstance: {fileID: 1466753057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &135532839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135532833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!4 &157202091 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
@@ -5420,7 +5456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.253765
+      value: -37.59
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5597,7 +5633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.581017
+      value: -33.34
       objectReference: {fileID: 0}
     - target: {fileID: 607596846395285866, guid: 0ac7d23658b5c4b4fbb711780c90fa11, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6464,7 +6500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 320284762}
   - component: {fileID: 320284763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6622,6 +6658,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &349096185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349096186}
+  - component: {fileID: 349096188}
+  - component: {fileID: 349096187}
+  m_Layer: 0
+  m_Name: Elevator Shaft Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349096186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349096185}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.867332, y: -22.566998, z: 0.24822593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1448930932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &349096187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349096185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b26e1a60db64a32b1a9044fb4e3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &349096188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349096185}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50.433334, y: 3.7317047, z: 1}
+  m_Center: {x: -4.7542152, y: 1.3658524, z: 0}
 --- !u!1 &371697001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6716,7 +6818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386149046}
   - component: {fileID: 386149047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12138,6 +12240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 480981905}
   - component: {fileID: 480981906}
+  - component: {fileID: 480981907}
   m_Layer: 0
   m_Name: Wood Spike Fence
   m_TagString: Untagged
@@ -12214,6 +12317,21 @@ PolygonCollider2D:
       - {x: -3.6084132, y: 0.6030661}
       - {x: 5.6224227, y: 0.6024015}
   m_UseDelaunayMesh: 0
+--- !u!114 &480981907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480981904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e88ebd9223d9d4f94f1fd18fbf31c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerHealth: {fileID: 1086446714}
+  playerMovement: {fileID: 1086446716}
 --- !u!1 &485877310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18111,7 +18229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636547025}
   - component: {fileID: 636547026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18447,7 +18565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662046431}
   - component: {fileID: 662046432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23971,10 +24089,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6009971147841307822, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053354452}
   m_SourcePrefab: {fileID: 100100000, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
 --- !u!1 &743387816
 GameObject:
@@ -24013,6 +24135,24 @@ Transform:
   - {fileID: 887927815}
   m_Father: {fileID: 1630138288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &743516382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 881844632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &743516384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743516382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1001 &764111395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24080,6 +24220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 765267047}
   - component: {fileID: 765267048}
+  - component: {fileID: 765267050}
+  - component: {fileID: 765267049}
   m_Layer: 0
   m_Name: Lava
   m_TagString: Untagged
@@ -24154,6 +24296,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &765267049
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765267046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &765267050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765267046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b26e1a60db64a32b1a9044fb4e3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776948594
 GameObject:
   m_ObjectHideFlags: 0
@@ -24431,6 +24630,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5562997, y: 0.14191377}
   m_EdgeRadius: 0
+--- !u!1 &784762033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 1463059031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &784762035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784762033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
+--- !u!1 &827331705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+  m_PrefabInstance: {fileID: 1047194328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &827331712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827331705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c2f05c63c29388da42304ef2a93bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bridge: {fileID: 1873703874}
+  rotationSpeed: 0.01
+  interactionKey: 101
 --- !u!4 &829599378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7826772910676355322, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
@@ -24595,7 +24832,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 743516384}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!4 &881844633 stripped
 Transform:
@@ -24854,6 +25094,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &923574431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 1434768418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &923574433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923574431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &947517735
 GameObject:
   m_ObjectHideFlags: 0
@@ -24886,6 +25144,24 @@ Transform:
   - {fileID: 1703760298}
   m_Father: {fileID: 1906143491}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952331672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 1677541040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &952331674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952331672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &982317883
 GameObject:
   m_ObjectHideFlags: 0
@@ -24980,7 +25256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995774983}
   - component: {fileID: 995774984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25222,6 +25498,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1025638433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+  m_PrefabInstance: {fileID: 1247109018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1025638435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025638433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6b80cf387608f9985bcf352b4b16e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fastRewind: 0
 --- !u!1 &1026788512
 GameObject:
   m_ObjectHideFlags: 0
@@ -25664,10 +25958,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6009971147841307822, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 827331712}
   m_SourcePrefab: {fileID: 100100000, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
 --- !u!1 &1056713396
 GameObject:
@@ -25968,7 +26266,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 40309292}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!4 &1150132618 stripped
 Transform:
@@ -25985,7 +26286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191752090}
   - component: {fileID: 1191752091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26530,7 +26831,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1025638435}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!4 &1247109019 stripped
 Transform:
@@ -26912,7 +27216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330632483}
   - component: {fileID: 1330632484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27366,7 +27670,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 923574433}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!1 &1435078827
 GameObject:
@@ -27536,6 +27843,40 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2071578261}
   m_SourcePrefab: {fileID: 100100000, guid: 92fbf6912ff56d03496161c3f99fe955, type: 3}
+--- !u!1 &1448930931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448930932}
+  m_Layer: 0
+  m_Name: Death Boxes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1448930932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448930931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45.810287, y: -6.5330033, z: -0.35917383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 349096186}
+  - {fileID: 1877806860}
+  - {fileID: 1969932447}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1463059031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27611,7 +27952,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 784762035}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!4 &1463059032 stripped
 Transform:
@@ -27666,6 +28010,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2776612010948829683, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1086446714}
+    - target: {fileID: 2776612010948829683, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1086446716}
     - target: {fileID: 3732196993942730890, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
       propertyPath: playerMovement
       value: 
@@ -27685,7 +28037,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3778282968974018572, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 135532839}
   m_SourcePrefab: {fileID: 100100000, guid: e43b7265ed1cf6e41b32a8082c46323b, type: 3}
 --- !u!4 &1476249168 stripped
 Transform:
@@ -38110,7 +38465,6 @@ Transform:
   - {fileID: 556288214}
   - {fileID: 2104161791}
   - {fileID: 743387817}
-  - {fileID: 2031522334}
   - {fileID: 652446374}
   - {fileID: 1678334424}
   m_Father: {fileID: 0}
@@ -72639,7 +72993,7 @@ Transform:
   m_GameObject: {fileID: 1670919653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -12.88, y: 45.49, z: 0}
+  m_LocalPosition: {x: -12.88, y: 49.25, z: 0}
   m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -73079,7 +73433,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4407867262097829564, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 952331674}
   m_SourcePrefab: {fileID: 100100000, guid: 7dd8e6bb80b298207b88f8c1d023e2d9, type: 3}
 --- !u!4 &1677541041 stripped
 Transform:
@@ -86238,7 +86595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843608354}
   - component: {fileID: 1843608355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86574,7 +86931,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873703874}
   - component: {fileID: 1873703873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86650,6 +87007,72 @@ Transform:
   - {fileID: 1191752090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &1877806859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877806860}
+  - component: {fileID: 1877806862}
+  - component: {fileID: 1877806861}
+  m_Layer: 0
+  m_Name: Elevator Shaft Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877806860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877806859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.867332, y: 19.133003, z: 0.24822593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1448930932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877806861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877806859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b26e1a60db64a32b1a9044fb4e3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1877806862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877806859}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50.433334, y: 3.7317047, z: 1}
+  m_Center: {x: -4.7542152, y: 1.3658524, z: 0}
 --- !u!1 &1881006612
 GameObject:
   m_ObjectHideFlags: 0
@@ -91997,6 +92420,72 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1969932446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969932447}
+  - component: {fileID: 1969932449}
+  - component: {fileID: 1969932448}
+  m_Layer: 0
+  m_Name: Sky Castle Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1969932447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969932446}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 38.110287, y: 41.333004, z: 0.24822593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1448930932}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1969932448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969932446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b26e1a60db64a32b1a9044fb4e3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1969932449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969932446}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50.433334, y: 3.7317047, z: 1}
+  m_Center: {x: -4.7542152, y: 1.3658524, z: 0}
 --- !u!1 &1973425267
 GameObject:
   m_ObjectHideFlags: 0
@@ -92672,6 +93161,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031522334}
+  - component: {fileID: 2031522336}
+  - component: {fileID: 2031522335}
   m_Layer: 0
   m_Name: Spike Group
   m_TagString: Untagged
@@ -92688,7 +93179,7 @@ Transform:
   m_GameObject: {fileID: 2031522333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.551172, y: -20.257193, z: -0.018896405}
+  m_LocalPosition: {x: -25.12, y: -20.49, z: -0.017595991}
   m_LocalScale: {x: 1.0626823, y: 1.0626823, z: 1.0626823}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -92711,8 +93202,84 @@ Transform:
   - {fileID: 1056713397}
   - {fileID: 1261420982}
   - {fileID: 371697002}
-  m_Father: {fileID: 1630138288}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031522335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031522333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b26e1a60db64a32b1a9044fb4e3504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &2031522336
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031522333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 6.2431726, y: -1.2209427}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.665243, y: 0.42099857}
+  m_EdgeRadius: 0
+--- !u!1 &2053354445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+  m_PrefabInstance: {fileID: 733537184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2053354452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053354445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0675ee4daa2e0a13a94e5a4130e2c3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gate: {fileID: 1043987519}
+  interactionKey: 101
 --- !u!1 &2058650207
 GameObject:
   m_ObjectHideFlags: 0
@@ -92723,7 +93290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058650208}
   - component: {fileID: 2058650209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forest_deco_woodenWalls_platforms_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93455,8 +94022,8 @@ SceneRoots:
   - {fileID: 241712366}
   - {fileID: 1873703874}
   - {fileID: 1622100825}
-  - {fileID: 733537184}
   - {fileID: 1047194328}
+  - {fileID: 733537184}
   - {fileID: 1043987519}
   - {fileID: 555993283}
   - {fileID: 1230101123}
@@ -93464,3 +94031,5 @@ SceneRoots:
   - {fileID: 5193247}
   - {fileID: 1225137081}
   - {fileID: 463604382}
+  - {fileID: 2031522334}
+  - {fileID: 1448930932}

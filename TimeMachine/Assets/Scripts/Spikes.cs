@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
+    public int damage;
+    public Health playerHealth;
+    public SPM playerMovement;
+    
     void OnCollisionEnter2D(Collision2D collision)
-    {/*
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player hit the spikes!");
-
-            // Attempt to get the Player script and call Die() if it exists
-            SPM player = collision.gameObject.GetComponent<SPM>();
-            if (player != null)
-            {
-                player.Die();
+    {
+        if(collision.gameObject.tag == "Player"){
+            playerMovement.knockbackCounter = playerMovement.knockbackTotalTime;
+            if(collision.transform.position.x <= transform.position.x){
+                playerMovement.knockbackRight = true;
             }
-        } */
+            if(collision.transform.position.x > transform.position.x){
+                playerMovement.knockbackRight = false;
+            }
+            playerHealth.Attack();
+        }
     }
 }
