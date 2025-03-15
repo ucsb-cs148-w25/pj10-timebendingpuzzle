@@ -42,6 +42,21 @@ public class MainMenuButton : MonoBehaviour
         // SceneManager.LoadScene("Level_2");
     }
 
+    public void level3()
+    {
+        StartCoroutine(WaitSecond("Level_3"));
+    }
+
+    public void level4()
+    {
+        StartCoroutine(WaitSecond("Level_4"));
+    }
+
+    public void level5()
+    {
+        StartCoroutine(WaitSecond("Level_5"));
+    }
+
     public void credit()
     {
         StartCoroutine(WaitSecond("EndScene"));
