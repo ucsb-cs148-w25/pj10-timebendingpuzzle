@@ -24959,6 +24959,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever - Lower
       objectReference: {fileID: 0}
+    - target: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570335649538427584, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3197323
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570335649538427584, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0048661605
+      objectReference: {fileID: 0}
     - target: {fileID: 5961403570183387467, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.85
@@ -27476,6 +27488,10 @@ PrefabInstance:
     - target: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
       propertyPath: m_Name
       value: Lever - Upper
+      objectReference: {fileID: 0}
+    - target: {fileID: 238914151374199960, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5961403570183387467, guid: d1c529658ac894c4c854c164600b2d02, type: 3}
       propertyPath: m_LocalPosition.x
