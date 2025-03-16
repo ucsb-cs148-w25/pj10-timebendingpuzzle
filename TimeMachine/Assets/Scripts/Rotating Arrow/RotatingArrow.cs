@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RotatingArrow : MonoBehaviour
 {
-    public float rotationSpeed = 5000f; // Extreme speed
+    public float rotationSpeed = 10f; // Extreme speed
     private GameObject player;
     private Renderer playerRenderer;
     private Color originalColor;
@@ -45,9 +45,6 @@ public class RotatingArrow : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.R))
         {
-            // Rotate the arrow instantly
-            transform.Rotate(0, 0, rotationSpeed);
-
             // Oscillate player's color smoothly
             if (playerRenderer != null)
             {
